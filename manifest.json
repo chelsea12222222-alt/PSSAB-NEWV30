@@ -1,0 +1,27 @@
+{
+  "id": "PSSAB-APP-BARU",
+  "name": "HORAS JALA GABE PUNGUAN SITUMORANG SIPITU AMA BORU BERE IBEBERE SEKTOR TANJUNG UNCANG BATAM",
+  "short_name": "PSSAB",
+  "description": "Aplikasi Punguan Situmorang Sipitu Ama Boru Bere Ibabere Sektor Tanjung Uncang Batam",
+  "lang": "id-ID",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#641016",
+  "theme_color": "#641016",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

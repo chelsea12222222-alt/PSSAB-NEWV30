@@ -1,0 +1,2742 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2b1710">
+<meta name="description" content="HORAS JALA GABE PUNGUAN SITUMORANG SIPITU AMA BORU BERE IBEBERE SEKTOR TANJUNG UNCANG BATAM - Jadwal, presensi, anggota, chat dan dokumentasi">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>PSSAB — Aplikasi Punguan Situmorang Tanjung Uncang Batam</title>
+<!-- PSSAB v28: ID Card modern + perbaikan lokasi Maps + motto resmi -->
+<style>
+/* ===== PSSAB V30 MODERN UI FIX ===== */
+:root{
+--card:#fffdf8;
+--text:#2b1710;
+}
+body{
+min-height:100vh;
+padding:16px;
+background-color:#641016;
+background-image:
+linear-gradient(rgba(43,10,12,.58),rgba(43,10,12,.72)),
+url('rumah-bolon-pssab-v30.png');
+background-position:center;
+background-size:cover;
+background-attachment:fixed;
+}
+button,input,select,textarea{
+font:inherit;
+}
+button{
+min-height:44px;
+padding:11px 16px;
+border:0;
+border-radius:12px;
+background:var(--red);
+color:#fff;
+font-weight:800;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(43,23,16,.12);
+}
+button:active{
+transform:scale(.98);
+}
+input,select,textarea{
+width:100%;
+min-height:44px;
+padding:11px 13px;
+border:1px solid #d8c9b8;
+border-radius:11px;
+background:#fff;
+color:#251c18;
+outline:none;
+}
+input:focus,select:focus,textarea:focus{
+border-color:var(--gold);
+box-shadow:0 0 0 3px rgba(215,166,42,.18);
+}
+.card{
+width:100%;
+max-width:520px;
+margin:18px auto;
+padding:22px;
+border:1px solid rgba(215,166,42,.55);
+border-radius:22px;
+background:rgba(255,253,248,.97);
+color:var(--text);
+box-shadow:0 16px 42px rgba(25,5,7,.25);
+}
+.brand{
+text-align:center;
+color:var(--red);
+font-weight:900;
+}
+.brand img{
+display:block;
+width:96px;
+height:96px;
+margin:0 auto 12px;
+object-fit:contain;
+border-radius:50%;
+}
+.muted{
+color:var(--muted);
+}
+.field{
+display:block;
+margin:14px 0;
+}
+.field label{
+display:block;
+margin-bottom:6px;
+font-size:14px;
+font-weight:800;
+}
+.row{
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+gap:12px;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:12px;
+}
+#appShell{
+width:100%;
+max-width:1000px;
+margin:0 auto;
+}
+#appShell header{
+padding:14px;
+border:1px solid rgba(215,166,42,.5);
+border-radius:18px;
+background:rgba(255,253,248,.97);
+color:var(--text);
+}
+#appShell main{
+width:100%;
+padding:16px 0;
+}
+.bottom{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:8px;
+margin:16px auto;
+}
+img{
+max-width:100%;
+}
+@media(max-width:480px){
+body{padding:10px}
+.card{padding:18px 15px;border-radius:18px}
+.grid{grid-template-columns:1fr}
+#appShell header{padding:11px}
+}
+:root{--red:#8e1017;--gold:#d7a62a;--dark:#2b1710;--cream:#fff7e6;--muted:#756b64}
+*{box-sizing:border-box}body{margin:0;background:#641016 url('rumah-bolon-pssab-v30.png') center center/cover fixed no-repeat;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#251c18}
+
+/* ===== PSSAB V30.8 MEMBER ID CARD — BATak PREMIUM ===== */
+.id-page-head{display:flex;align-items:center;gap:14px;max-width:520px;margin:0 auto 14px;padding:8px 12px;color:#fff;background:linear-gradient(110deg,#720e17,#3b1014);border-radius:14px;box-shadow:0 6px 18px #25080a35}
+.id-page-head button{background:transparent;border:0;color:#f7d875;padding:6px 2px;min-height:36px;font-size:14px;font-weight:700;box-shadow:none}
+.id-page-head h2{margin:0;font-size:20px;line-height:1.2;color:#fff;letter-spacing:.3px}
+.idcard{width:100%;max-width:520px;margin:0 auto;background:radial-gradient(ellipse at 8% 6%,rgba(215,166,42,.15),transparent 28%),radial-gradient(ellipse at 94% 55%,rgba(215,166,42,.13),transparent 25%),linear-gradient(145deg,#3a0b10 0%,#4d1016 48%,#27090d 100%);color:#fff;border:3px solid #d9b45c;border-radius:23px;padding:15px 14px 0;box-shadow:0 14px 32px rgba(24,5,7,.34);position:relative;overflow:hidden;isolation:isolate}
+.idcard:before{content:"";position:absolute;inset:7px;border:1px solid rgba(240,205,117,.78);border-radius:15px;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 0% 0%,transparent 0 18%,rgba(231,189,89,.06) 18.5% 19%,transparent 19.5%),repeating-linear-gradient(135deg,transparent 0 20px,rgba(242,212,123,.025) 21px 22px)}
+.idcard:after{content:"ᛟ  ❖  ᛟ";position:absolute;left:16px;bottom:74px;color:#f2d47b;opacity:.2;font-size:38px;letter-spacing:8px;pointer-events:none;transform:rotate(-18deg);z-index:-1}
+.idtop{display:flex;align-items:center;gap:13px;position:relative;z-index:1;padding:7px 7px 14px;border-bottom:1px solid rgba(242,212,123,.5);min-height:115px}
+.idlogo{width:92px;height:92px;flex:0 0 92px;border-radius:50%;object-fit:cover;border:3px solid #e9c96c;box-shadow:0 3px 12px #0008;background:#501016}
+.idbrand{min-width:0;flex:1}.idbrand strong{display:block;color:#f7d875;font-size:43px;letter-spacing:2px;line-height:.98;font-family:Georgia,serif;text-shadow:0 2px 3px #0008}.idbrand span{display:block;font-size:12px;line-height:1.28;margin-top:7px;font-weight:750;letter-spacing:.1px;color:#fff8e8}
+.id-ribbon{position:relative;z-index:2;margin:-1px auto 0;width:max-content;max-width:92%;text-align:center;background:linear-gradient(#f8df9a,#d8ad4e);color:#32100e;border:1px solid #f7e2a5;border-radius:0 0 10px 10px;padding:5px 25px;font-size:16px;font-weight:950;letter-spacing:.8px;box-shadow:0 3px 8px #0004}
+.idmember{position:relative;z-index:1;display:grid;grid-template-columns:154px minmax(0,1fr);gap:16px;align-items:start;margin:18px 8px 0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+.idphoto-wrap{padding:5px;border:2px solid #e6c76d;border-radius:16px;background:linear-gradient(135deg,#9b6a2b,#f8e6a2,#71431f);box-shadow:0 4px 12px #0006}
+.idphoto{display:block;width:100%;height:175px;border-radius:10px;object-fit:cover;border:2px solid #4d2715;background:#fff;box-shadow:inset 0 0 0 1px #fff}
+.idinfo{min-width:0;padding-top:0}.idname{font-size:25px;line-height:1.12;font-weight:850;margin:0 0 15px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#fff8ef;overflow-wrap:anywhere}.idfield{display:grid;grid-template-columns:76px minmax(0,1fr);column-gap:5px;align-items:start;margin:7px 0}.idfield:before{display:none}.idfield .label{font-size:15px;color:#f5d782;font-weight:500;grid-column:1}.idfield .label:after{content:""}.idfield .value{font-size:16px;font-weight:650;grid-column:2;color:#fff;overflow-wrap:anywhere}.idfield .value:before{content:": ";color:#f5d782}
+.id-lower{position:relative;z-index:1;display:flex;justify-content:flex-end;align-items:flex-end;min-height:158px;margin:8px 8px 0;padding:0 3px 13px}
+.idqrbox{width:124px;flex:0 0 124px;background:#fff;border-radius:12px;padding:7px;margin:0 0 0 auto;box-shadow:0 5px 14px #0006;border:2px solid #e8ca70}.idqr{margin:0;background:transparent;padding:0;display:flex;justify-content:center;align-items:center;min-height:0}.idqr canvas,.idqr img{display:block;max-width:100%;width:104px!important;height:104px!important}.idqrhelp{text-align:center;color:#392019;font-size:9px;font-weight:750;line-height:1.2;margin-top:4px}
+.id-watermark{position:absolute;left:10px;right:140px;bottom:34px;color:#e9c46a;opacity:.25;font-size:31px;font-family:Georgia,serif;line-height:1.05;letter-spacing:2px;transform:rotate(-9deg);pointer-events:none}
+.idfooter{position:relative;z-index:1;text-align:center;margin:0 -14px;padding:13px 8px 15px;background:linear-gradient(100deg,#2c090d,#65121b,#30090e);border-top:3px solid #d8b55d;box-shadow:0 -3px 10px #0003}.idfooter strong{display:block;color:#f7d875;font-size:22px;letter-spacing:.6px;font-family:Georgia,serif}.idfooter em{display:block;color:#f8e4a7;font-size:17px;margin-top:4px;font-weight:600;font-family:Georgia,serif}.id-valid{font-size:9px;color:#fff4da;opacity:.78;margin-top:5px}
+.id-actions{max-width:520px;margin:12px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}.id-actions button{width:100%;padding:12px 10px;border-radius:12px;border:1px solid #e3c36d;background:linear-gradient(135deg,#75101a,#4c0c12);color:#fff8e9;font-weight:800;box-shadow:0 4px 10px #25080a22}.id-actions .outline{background:linear-gradient(135deg,#75101a,#4c0c12);color:#fff8e9;border:1px solid #e3c36d}.id-actions .id-back{grid-column:1/-1;background:#fff8e9;color:#75101a;border:1px solid #d9b45c}
+@media(max-width:420px){.id-page-head{margin-bottom:10px;padding:7px 10px}.id-page-head h2{font-size:18px}.idcard{padding:11px 10px 0;border-radius:18px;border-width:2px}.idtop{gap:9px;min-height:92px;padding:5px 4px 10px}.idlogo{width:72px;height:72px;flex-basis:72px}.idbrand strong{font-size:34px;letter-spacing:1px}.idbrand span{font-size:9.5px;line-height:1.28;margin-top:5px}.id-ribbon{font-size:13px;padding:4px 20px}.idmember{grid-template-columns: minmax(105px,42%) minmax(0,1fr);gap:11px;margin:15px 4px 0}.idphoto{height:142px}.idname{font-size:20px;margin-bottom:11px}.idfield{grid-template-columns:57px minmax(0,1fr);margin:6px 0;column-gap:2px}.idfield .label{font-size:12px}.idfield .value{font-size:13px}.id-lower{min-height:127px;margin:5px 4px 0;padding-bottom:10px}.idqrbox{width:104px;flex-basis:104px;padding:5px;border-radius:9px}.idqr canvas,.idqr img{width:88px!important;height:88px!important}.idqrhelp{font-size:8px}.id-watermark{right:115px;bottom:28px;font-size:22px}.idfooter{margin:0 -10px;padding:10px 6px 12px}.idfooter strong{font-size:17px}.idfooter em{font-size:13px}.id-valid{font-size:8px}.id-actions{gap:8px}.id-actions button{padding:10px 7px;font-size:14px}}
+@media(max-width:340px){.idmember{grid-template-columns:94px minmax(0,1fr);gap:8px}.idphoto{height:122px}.idname{font-size:17px}.idfield{grid-template-columns:48px minmax(0,1fr)}.idfield .label,.idfield .value{font-size:11px}.idbrand strong{font-size:29px}.idbrand span{font-size:8px}.idlogo{width:60px;height:60px;flex-basis:60px}}
+@media print{body.print-idcard{background:#fff!important;padding:0!important}body.print-idcard>*{display:none!important}body.print-idcard #appShell{display:block!important;max-width:none!important}body.print-idcard #appShell header,body.print-idcard #appShell main>.id-page-head,body.print-idcard #appShell main>h2,body.print-idcard #appShell .id-actions,body.print-idcard #appShell .bottom{display:none!important}body.print-idcard #appShell main{padding:0!important;max-width:none!important}body.print-idcard #appShell main .idcard{display:block!important;width:100%!important;max-width:520px!important;margin:0 auto!important;box-shadow:none!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+.delete-modal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.62);display:flex;align-items:center;justify-content:center;padding:20px}
+.delete-modal-card{width:min(520px,100%);background:var(--card,#fff);color:var(--text,#2b1710);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.35);border:1px solid rgba(0,0,0,.12)}
+.delete-modal-card h3{margin:0 0 12px;font-size:24px}.delete-modal-card p{line-height:1.5;margin:0 0 20px}.delete-modal-card button:disabled{opacity:.55}
+ /* ===== PSSAB MOBILE COMPACT DESIGN ===== */
+@media(max-width:600px){
+body{padding:8px}
+
+.card{
+max-width:420px;
+margin:10px auto;
+padding:16px 14px;
+border-radius:18px;
+}
+
+.brand img{
+width:64px;
+height:64px;
+margin:0 auto 8px;
+}
+
+.brand h1,
+.brand h2{
+font-size:22px;
+line-height:1.2;
+margin:8px 0;
+}
+
+.brand p{
+font-size:14px;
+line-height:1.4;
+margin:8px 0;
+}
+
+.field{margin:10px 0}
+
+input,select,textarea{
+min-height:42px;
+padding:9px 12px;
+font-size:15px;
+border-radius:10px;
+}
+
+button{
+min-height:42px;
+padding:9px 12px;
+font-size:15px;
+border-radius:11px;
+}
+
+#appShell main{padding:10px 0}
+
+#appShell header{
+padding:10px;
+border-radius:14px;
+}
+}
+
+/* ===== PSSAB LOGIN: BACKGROUND RUMAH BOLON ===== */
+#loginScreen {
+  background: transparent !important;
+}
+
+#loginScreen > .card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Kotak krem hanya pada kolom Email dan Password */
+#loginScreen .field {
+  background: #fff7e6;
+  border: 1px solid rgba(215, 166, 42, 0.65);
+  border-radius: 12px;
+  padding: 3px 10px;
+  margin: 12px 0;
+}
+
+/* Input menyatu dengan kotak krem */
+#loginScreen .field input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  color: #251c18;
+}
+
+/* Tombol login dan tombol lainnya tetap marun */
+#loginScreen button {
+  background: #8e1017;
+  color: #fff;
+  border: 1px solid #8e1017;
+}
+
+/* Tetap marun saat tombol memakai kelas btn2 */
+#loginScreen button.btn2 {
+  background: #8e1017;
+  color: #fff;
+  border: 1px solid #8e1017;
+}
+
+#loginScreen > .card > h2 {
+  color: #ffd966 !important;
+  -webkit-text-fill-color: #ffd966 !important;
+  text-shadow: 1px 2px 5px #000 !important;
+}
+ 
+/* Warna emas tulisan Beranda PSSAB */
+#app h2 {
+  color: #ffd966 !important;
+  -webkit-text-fill-color: #ffd966 !important;
+  text-shadow: 1px 2px 5px #000 !important;
+}
+
+#app p.muted {
+  color: #ffd966 !important;
+  -webkit-text-fill-color: #ffd966 !important;
+  text-shadow: 1px 2px 4px #000 !important;
+}
+ /* ===== PSSAB V30 LOGIN MODERN OVERRIDE ===== */
+#loginScreen {
+min-height: 100vh;
+padding: 18px 14px 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#loginScreen > .card {
+width: 100%;
+max-width: 430px;
+margin: auto;
+padding: 16px 18px;
+background: transparent !important;
+border: none !important;
+box-shadow: none !important;
+}
+
+#loginScreen .brand {
+text-align: center;
+color: #ffd875;
+}
+
+#loginScreen .brand img {
+width: 94px;
+height: 94px;
+margin: 0 auto 10px;
+object-fit: contain;
+}
+
+#loginScreen .brand h1 {
+font-size: 30px;
+line-height: 1.15;
+margin: 8px 0;
+color: #ffd875 !important;
+-webkit-text-fill-color: #ffd875 !important;
+text-shadow: 1px 2px 5px #000;
+}
+
+#loginScreen .brand p {
+max-width: 360px;
+margin: 8px auto 18px;
+font-size: 14px;
+line-height: 1.5;
+font-weight: 800;
+color: #fff !important;
+-webkit-text-fill-color: #fff !important;
+text-shadow: 1px 2px 4px #000;
+}
+
+#loginScreen .field {
+margin: 10px 0;
+padding: 0;
+background: transparent;
+border: none;
+}
+
+#loginScreen .field input {
+min-height: 48px;
+padding: 12px 14px;
+border: 1px solid #e2d2b8;
+border-radius: 12px;
+background: #fffdf8;
+color: #2b1710;
+font-size: 15px;
+}
+
+#loginScreen button {
+width: 100%;
+min-height: 46px;
+margin: 5px 0;
+border-radius: 12px;
+background: #8e1017;
+color: #fff;
+font-size: 15px;
+font-weight: 800;
+}
+
+#loginScreen button.btn2 {
+background: #fff0d5;
+color: #641016;
+border: 1px solid #e2c58c;
+}
+
+@media (max-width: 380px) {
+#loginScreen {
+padding: 12px 10px 24px;
+}
+
+#loginScreen .brand img {
+width: 78px;
+height: 78px;
+}
+
+#loginScreen .brand h1 {
+font-size: 26px;
+}
+
+#loginScreen > .card {
+padding: 12px;
+}
+/* PSSAB V30 - FORM LOGIN LEBIH RINGKAS */
+#loginScreen > .card {
+max-width: 340px;
+padding: 12px 14px;
+}
+
+#loginScreen .field {
+margin: 7px 0;
+}
+
+#loginScreen .field input {
+min-height: 38px;
+padding: 8px 11px;
+font-size: 13px;
+border-radius: 9px;
+}
+
+#loginScreen button {
+min-height: 38px;
+margin: 3px 0;
+padding: 8px 12px;
+font-size: 13px;
+border-radius: 9px;
+}
+
+#loginScreen .brand p {
+margin-bottom: 12px;
+}
+ 
+/* ===== PSSAB V30 MODERN HOME ===== */
+
+#appShell > header {
+  padding: 12px 16px;
+  border: 0;
+  border-bottom: 1px solid rgba(215,166,42,.45);
+  border-radius: 0;
+  background: rgba(43,10,12,.90);
+  color: #fff;
+  box-shadow: 0 5px 18px rgba(0,0,0,.16);
+}
+
+#appShell > header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  color: #fff;
+}
+
+#appShell > header .brand img {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  margin: 0;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#appShell > header .brand h1 {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-shadow: none;
+}
+
+#appShell > header .brand small {
+  color: #ffd875;
+  font-weight: 900;
+}
+
+#appShell main {
+  padding: 12px 12px 20px;
+}
+
+.home-welcome {
+  padding: 16px 8px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.home-greeting {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: left;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 5px #000;
+}
+
+.home-title {
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 10vw, 54px);
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ffd45e;
+  line-height: 1.1;
+  text-shadow: 0 3px 8px #300609;
+}
+
+.home-subtitle {
+  max-width: 460px;
+  margin: 8px auto 0;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 5px #000;
+}
+
+.home-panel {
+  padding: 12px;
+  border: 1px solid rgba(215,166,42,.65);
+  border-radius: 23px;
+  background: rgba(255,253,248,.98);
+  color: #2b1710;
+  box-shadow: 0 10px 28px rgba(25,5,7,.22);
+}
+
+.home-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0 12px;
+  color: #8e1017;
+}
+
+.home-section-title > span {
+  font-size: 23px;
+}
+
+.home-section-title strong {
+  flex: 1;
+  font-size: 15px;
+}
+
+.home-see-all {
+  min-height: 34px;
+  padding: 6px 9px;
+  background: #fff0d5;
+  color: #8e1017;
+  font-size: 11px;
+  box-shadow: none;
+}
+
+.home-event {
+  display: grid;
+  grid-template-columns: 68px minmax(0,1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 17px;
+  background: #fffaf0;
+  border: 1px solid #f1e4d0;
+}
+
+.home-date {
+  display: flex;
+  min-height: 82px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
+  background: linear-gradient(145deg,#a80f1b,#700811);
+  color: #fff;
+}
+
+.home-date strong {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.home-date span {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.home-event-info {
+  min-width: 0;
+}
+
+.home-event-info h3 {
+  margin: 0 0 7px;
+  color: #8e1017;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.home-event-info p {
+  margin: 5px 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.home-event-actions {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.home-event-actions button {
+  padding: 10px 6px;
+  font-size: 12px;
+  min-height: 42px;
+}
+
+.home-event-actions .home-map-btn {
+  background: #fff0d5;
+  border: 1px solid #eed7ab;
+  color: #503017;
+}
+
+.home-empty {
+  padding: 10px;
+  text-align: center;
+  background: #fffaf0;
+  border-radius: 14px;
+}
+
+.home-menu {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.home-tile {
+  display: flex;
+  min-width: 0;
+  min-height: 112px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 5px;
+  border: 1px solid #f0e4d3;
+  border-radius: 15px;
+  background: #fff;
+  color: #172d4c;
+  box-shadow: none;
+  text-align: center;
+}
+
+.home-tile:active {
+  transform: scale(.97);
+}
+
+.tile-icon {
+  font-size: 27px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.tile-blue { color: #168bd2; }
+.tile-red { color: #c51c2c; }
+.tile-green { color: #10a77b; }
+
+.home-tile strong {
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.home-tile small {
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #62748a;
+}
+
+@media (max-width: 380px) {
+  #appShell main {
+    padding: 8px 8px 16px;
+  }
+
+  .home-welcome {
+    padding: 10px 5px 16px;
+  }
+
+  .home-greeting {
+    font-size: 17px;
+  }
+
+  .home-panel {
+    padding: 9px;
+    border-radius: 18px;
+  }
+
+  .home-section-title strong {
+    font-size: 13px;
+  }
+
+  .home-event {
+    grid-template-columns: 58px minmax(0,1fr);
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .home-date {
+    min-height: 72px;
+  }
+
+  .home-date strong {
+    font-size: 24px;
+  }
+
+  .home-event-info h3 {
+    font-size: 15px;
+  }
+
+  .home-menu {
+    gap: 6px;
+  }
+
+  .home-tile {
+    min-height: 100px;
+    padding: 7px 3px;
+  }
+
+  .home-tile strong {
+    font-size: 11px;
+  }
+
+  .home-tile small {
+    font-size: 9px;
+  }
+}
+ 
+/* ===== PSSAB V30 BERANDA MODERN ===== */
+#appShell.home-active > header {
+  display: none !important;
+}
+
+#appShell.home-active main {
+  padding-top: 4px;
+}
+
+.home-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px 20px;
+  color: white;
+  background: transparent;
+}
+
+.home-logo {
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 3px 5px #0008);
+}
+
+.home-greeting {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 16px;
+  line-height: 1.35;
+  text-shadow: 0 2px 5px #000;
+  overflow-wrap: anywhere;
+}
+
+.home-greeting strong {
+  font-size: 19px;
+}
+
+.home-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-actions button {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-notification {
+  background: transparent !important;
+  border: 1px solid #ffffff99 !important;
+  color: white !important;
+  font-size: 25px !important;
+}
+
+.home-avatar {
+  overflow: hidden;
+  background: #fff0d5 !important;
+  border: 2px solid #f2d47b !important;
+  color: #641016 !important;
+  font-size: 18px !important;
+}
+
+.home-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.home-events {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e4c77e;
+  border-radius: 24px;
+  background: rgba(255,253,248,.97);
+  color: #2b1710;
+  box-shadow: 0 12px 32px #25050735;
+}
+
+.home-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.home-section-title h2 {
+  margin: 0;
+  color: #8e1017 !important;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.home-see-all {
+  width: auto;
+  flex-shrink: 0;
+  min-height: 40px;
+  padding: 8px 12px;
+  background: #fff0d5;
+  color: #641016;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.home-event-card {
+  display: grid;
+  grid-template-columns: 76px minmax(0,1fr);
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #f0dfc6;
+  border-radius: 20px;
+  background: #fffaf1;
+}
+
+.home-date {
+  min-height: 94px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 16px;
+  background: #8e1017;
+  color: white;
+}
+
+.home-date strong {
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.home-date span {
+  font-size: 15px;
+}
+
+.home-event-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.home-event-info h3 {
+  margin: 2px 0 10px;
+  color: #8e1017;
+  font-size: 19px;
+}
+
+.home-event-info p {
+  margin: 7px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.home-event-buttons {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.home-event-buttons button {
+  min-width: 0;
+  min-height: 46px;
+  padding: 9px 6px;
+  font-size: 13px;
+  white-space: normal;
+}
+
+.home-event-buttons .home-map-button {
+  background: #fff0d5;
+  color: #56341c;
+  border: 1px solid #ecd4a8;
+}
+
+.home-no-event {
+  display: block;
+}
+
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.home-feature {
+  display: flex;
+  min-width: 0;
+  min-height: 112px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 5px;
+  border: 1px solid #efdfca;
+  border-radius: 17px;
+  background: #fff;
+  color: #173252;
+  box-shadow: none;
+  text-align: center;
+  white-space: normal;
+}
+
+.feature-icon {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.feature-icon.blue { color: #1684d8; }
+.feature-icon.red { color: #c91d32; }
+.feature-icon.green { color: #0ca77e; }
+
+.home-feature strong {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.home-feature small {
+  color: #61758e;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+@media (max-width: 380px) {
+  .home-topbar { gap: 8px; }
+  .home-logo {
+    width: 70px;
+    height: 70px;
+    flex-basis: 70px;
+  }
+  .home-greeting { font-size: 13px; }
+  .home-greeting strong { font-size: 16px; }
+  .home-actions { gap: 5px; }
+  .home-actions button {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+  .home-events { padding: 11px; }
+  .home-event-card { grid-template-columns: 65px minmax(0,1fr); gap: 8px; padding: 9px; }
+  .home-date { min-height: 82px; }
+  .home-date strong { font-size: 27px; }
+  .home-feature-grid { gap: 7px; }
+  .home-feature { min-height: 105px; padding: 9px 3px; }
+  .home-feature strong { font-size: 12px; }
+  .home-feature small { font-size: 10px; }
+  }
+}
+  
+/* ===== PSSAB V30: HEADER BERANDA MODERN ===== */
+#appShell .pssab-topbar {
+  width: 100%;
+  min-height: 88px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+}
+
+#appShell .topbar-brand {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+#appShell .topbar-logo {
+  display: block;
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #d7a62a;
+  box-shadow: 0 3px 12px #0006;
+}
+
+#appShell .topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#appShell .topbar-icon,
+#appShell .topbar-profile {
+  width: 46px;
+  height: 46px;
+  min-height: 46px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(43, 23, 16, 0.48);
+  border: 1px solid rgba(255, 215, 117, 0.7);
+  color: #fff;
+  box-shadow: none;
+}
+
+#appShell .topbar-icon {
+  font-size: 23px;
+}
+
+#appShell .topbar-profile {
+  overflow: hidden;
+}
+
+#appShell .topbar-profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (max-width: 380px) {
+  #appShell .pssab-topbar {
+    min-height: 74px;
+    padding: 8px 12px;
+  }
+
+  #appShell .topbar-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  #appShell .topbar-actions {
+    gap: 8px;
+  }
+}
+ 
+/* BERANDA V30: logo kiri, sapaan tengah, aksi kanan */
+.home-topbar {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 12px;
+  box-sizing: border-box;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.home-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.home-greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  color: gold;
+  text-shadow: 1px 2px 4px #000;
+}
+
+.home-greeting strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.home-greeting span {
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.home-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-notification,
+.home-avatar {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-notification {
+  background: #8e1017;
+  color: gray;
+  border: 1px solid #d9b76a;
+  font-size: 21px;
+}
+
+.home-avatar {
+  background: #fff0d5;
+  color: #8e1017;
+  border: 2px solid #d9b76a;
+  font-size: 19px;
+  font-weight: 800;
+  overflow: hidden;
+}
+
+.home-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (max-width: 380px) {
+  .home-topbar {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    gap: 7px;
+    padding: 10px 8px;
+  }
+
+  .home-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .home-greeting strong {
+    font-size: 12px;
+  }
+
+  .home-greeting span {
+    font-size: 12px;
+  }
+
+  .home-actions {
+    gap: 5px;
+  }
+
+  .home-notification,
+  .home-avatar {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+  }
+}
+
+
+/* ===== PSSAB V30.1: TOPBAR + SINGLE HOME SCHEDULE FIX ===== */
+#appShell > header.pssab-topbar {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 10px;
+  min-height: 68px;
+  padding: 10px 14px;
+  background: linear-gradient(110deg, rgba(76, 8, 15, .96), rgba(112, 15, 24, .90));
+  border: 0;
+  border-bottom: 1px solid rgba(215, 166, 42, .65);
+  border-radius: 0;
+  box-shadow: 0 5px 18px rgba(0,0,0,.16);
+  box-sizing: border-box;
+}
+
+#appShell > header.pssab-topbar .topbar-brand {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#appShell > header.pssab-topbar .topbar-logo {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  margin: 0;
+  padding: 2px;
+  object-fit: contain;
+  background: rgba(255, 247, 230, .12);
+  border: 1.5px solid #d7a62a;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+#appShell > header.pssab-topbar .topbar-greeting {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #fff;
+  line-height: 1.25;
+  overflow: hidden;
+}
+
+#appShell > header.pssab-topbar .topbar-greeting strong {
+  color: #f4d58a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#appShell > header.pssab-topbar #topbarMemberName {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#appShell > header.pssab-topbar .topbar-actions {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+#appShell > header.pssab-topbar .topbar-icon,
+#appShell > header.pssab-topbar #notificationBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(215,166,42,.75);
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  font-family: inherit;
+  font-size: 19px;
+  line-height: 1;
+  box-shadow: none;
+}
+
+#appShell > header.pssab-topbar #notificationBtn::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #7a1018;
+  border-radius: 50%;
+  background: #f5c451;
+}
+
+@media (max-width: 380px) {
+  #appShell > header.pssab-topbar {
+    grid-template-columns: 42px minmax(0, 1fr) 38px;
+    min-height: 62px;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  #appShell > header.pssab-topbar .topbar-brand {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  #appShell > header.pssab-topbar .topbar-logo {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  #appShell > header.pssab-topbar .topbar-actions {
+    width: 38px;
+    height: 38px;
+  }
+
+  #appShell > header.pssab-topbar .topbar-icon,
+  #appShell > header.pssab-topbar #notificationBtn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 18px;
+  }
+
+  #appShell > header.pssab-topbar .topbar-greeting strong {
+    font-size: 11px;
+  }
+
+  #appShell > header.pssab-topbar #topbarMemberName {
+    font-size: 12px;
+  }
+}
+\n
+
+/* ===== PSSAB V30.2: MOBILE FIT + BOTTOM NAV SINGLE ROW ===== */
+@media (max-width: 600px) {
+  html { min-height: 100%; }
+  body {
+    min-height: 100dvh;
+    padding: 0 !important;
+    background-attachment: scroll;
+  }
+  #appShell {
+    width: 100%;
+    max-width: none;
+    min-height: 100dvh;
+    margin: 0;
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+  #appShell > header.pssab-topbar {
+    min-height: 62px;
+    padding: 7px 12px;
+    grid-template-columns: 42px minmax(0, 1fr) 38px;
+    gap: 8px;
+  }
+  #appShell > header.pssab-topbar .topbar-brand,
+  #appShell > header.pssab-topbar .topbar-actions {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+  #appShell > header.pssab-topbar .topbar-logo {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+  #appShell > header.pssab-topbar #notificationBtn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 17px;
+  }
+  #appShell main {
+    padding: 8px 9px calc(14px + env(safe-area-inset-bottom)) !important;
+  }
+  .home-events {
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 0 5px 16px rgba(37, 5, 7, .15);
+  }
+  .home-section-title {
+    gap: 6px;
+    margin-bottom: 9px;
+  }
+  .home-section-title h2 {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  .home-see-all {
+    min-height: 34px;
+    padding: 6px 9px;
+    font-size: 11px;
+    border-radius: 10px;
+  }
+  .home-event-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 8px;
+    padding: 8px;
+    border-radius: 15px;
+  }
+  .home-date {
+    min-height: 72px;
+    border-radius: 12px;
+  }
+  .home-date strong { font-size: 25px; }
+  .home-date span { font-size: 12px; }
+  .home-event-info h3 {
+    margin: 1px 0 5px;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+  .home-event-info p {
+    margin: 4px 0;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  .home-event-buttons { gap: 6px; }
+  .home-event-buttons button {
+    min-height: 38px;
+    padding: 6px 4px;
+    font-size: 11px;
+    border-radius: 10px;
+  }
+  .home-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    margin-top: 9px;
+  }
+  .home-feature {
+    min-height: 86px;
+    gap: 4px;
+    padding: 7px 3px;
+    border-radius: 13px;
+  }
+  .feature-icon {
+    font-size: 22px;
+    line-height: 1.05;
+  }
+  .home-feature strong {
+    font-size: 11px;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  .home-feature small {
+    font-size: 9px;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  /* Keep all five main destinations on one line and above Android system navigation. */
+  #appShell > nav.bottom {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 5px;
+    margin: 0;
+    padding: 7px 7px calc(7px + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(215, 166, 42, .65);
+    border-radius: 0;
+    background: linear-gradient(135deg, #741019, #4f0a10);
+    box-shadow: 0 -5px 18px rgba(30, 0, 4, .22);
+  }
+  #appShell > nav.bottom button {
+    display: flex;
+    min-width: 0;
+    min-height: 51px;
+    height: 51px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin: 0;
+    padding: 4px 1px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1.1;
+    font-weight: 750;
+    white-space: nowrap;
+    box-shadow: none;
+    overflow: hidden;
+  }
+  #appShell > nav.bottom button.active {
+    background: #97131d;
+    border-color: rgba(242, 212, 123, .55);
+  }
+}
+@media (max-width: 360px) {
+  #appShell > nav.bottom { gap: 2px; padding-left: 4px; padding-right: 4px; }
+  #appShell > nav.bottom button { font-size: 9px; border-radius: 8px; }
+  .home-events { padding: 8px; }
+  .home-section-title h2 { font-size: 13px; }
+  .home-feature-grid { gap: 5px; }
+  .home-feature { min-height: 80px; }
+}
+
+
+
+/* ===== PSSAB V30.3: BERANDA MENYERUPAI REFERENSI ===== */
+@media (max-width: 600px) {
+  body {
+    background-color: #5c1016 !important;
+    background-image: linear-gradient(180deg, rgba(66,7,13,.18), rgba(66,7,13,.34)), url('rumah-bolon-pssab-v30.png') !important;
+    background-position: center top !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
+  }
+  #appShell {
+    min-height: 100dvh;
+    padding-bottom: calc(70px + env(safe-area-inset-bottom)) !important;
+  }
+  #appShell > header.pssab-topbar {
+    grid-template-columns: 42px minmax(0,1fr) auto !important;
+    gap: 8px !important;
+    min-height: 64px !important;
+    padding: 8px 12px !important;
+    background: linear-gradient(100deg, rgba(75,5,12,.94), rgba(116,12,22,.88)) !important;
+    border-bottom: 1px solid rgba(230,190,91,.65) !important;
+  }
+  #appShell > header.pssab-topbar .topbar-brand,
+  #appShell > header.pssab-topbar .topbar-logo {
+    width: 40px !important; height: 40px !important; min-width: 40px !important;
+  }
+  #appShell > header.pssab-topbar .topbar-logo { border-width: 1.5px !important; }
+  #appShell > header.pssab-topbar .topbar-greeting strong { font-size: 11px !important; }
+  #appShell > header.pssab-topbar #topbarMemberName { font-size: 12px !important; }
+  #appShell > header.pssab-topbar .topbar-actions {
+    width: auto !important; height: 40px !important; min-width: 0 !important;
+    display: flex !important; flex-direction: row !important; gap: 7px !important;
+  }
+  #appShell > header.pssab-topbar .topbar-profile {
+    display: inline-flex !important; align-items: center !important; justify-content: center !important;
+    width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important;
+    padding: 0 !important; margin: 0 !important; overflow: hidden !important;
+    border: 2px solid #e3bd63 !important; border-radius: 50% !important;
+    background: #fff0d5 !important; color: #82101a !important; font-size: 14px !important;
+    box-shadow: none !important;
+  }
+  #topbarAvatarInitial { display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+  #topbarAvatarInitial img { display:block; width:100%; height:100%; object-fit:cover; border-radius:50%; }
+  #appShell > header.pssab-topbar #notificationBtn {
+    width: 34px !important; height: 34px !important; min-width: 34px !important; min-height: 34px !important;
+    border: 0 !important; background: transparent !important; color: #fff !important; font-size: 21px !important;
+  }
+  #appShell main {
+    padding: 0 9px 12px !important;
+  }
+  .home-hero {
+    min-height: 142px;
+    display: flex; align-items: center;
+    margin: 0 -9px 0;
+    padding: 10px 18px 18px 70px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(100deg, rgba(63,5,12,.22), rgba(90,8,17,.18));
+    color: white;
+  }
+  .home-hero:before {
+    content: ""; position:absolute; inset:0;
+    background: linear-gradient(90deg, rgba(57,4,11,.08), rgba(75,4,12,.45));
+    pointer-events:none;
+  }
+  .home-hero-copy { position:relative; z-index:1; min-width:0; }
+  .home-hero h1 {
+    margin: 0 0 3px !important; color: #ffd56c !important;
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: clamp(34px, 10vw, 43px) !important; line-height: 1 !important;
+    letter-spacing: 2px; text-shadow: 0 2px 5px #300308;
+  }
+  .home-hero p {
+    margin: 0 !important; color: #fff !important; font-size: 10px !important;
+    line-height: 1.35 !important; font-weight: 850 !important;
+    text-shadow: 0 2px 4px #300308; overflow-wrap: anywhere;
+  }
+  .home-events {
+    position: relative; z-index: 2;
+    margin: -2px 0 0 !important; padding: 12px !important;
+    border: 1px solid #e8c987 !important; border-radius: 20px !important;
+    background: rgba(255,254,250,.98) !important;
+    box-shadow: 0 5px 18px rgba(42,4,8,.22) !important;
+  }
+  .home-section-title { align-items:center !important; margin-bottom: 9px !important; }
+  .home-section-title h2 { font-size: 14px !important; line-height: 1.25 !important; color:#173252 !important; }
+  .home-see-all { min-height: 32px !important; padding: 5px 8px !important; background:transparent !important; color:#9b1020 !important; font-size:10px !important; }
+  .home-event-card {
+    grid-template-columns: 48px minmax(0,1fr) !important; gap: 9px !important;
+    padding: 8px !important; border: 0 !important; border-radius: 13px !important;
+    background: #fff !important;
+  }
+  .home-date { min-height: 65px !important; border-radius: 12px !important; }
+  .home-date strong { font-size: 23px !important; }
+  .home-date span { font-size: 11px !important; }
+  .home-event-info h3 { margin: 0 0 4px !important; font-size: 14px !important; line-height:1.2 !important; }
+  .home-event-info p { margin: 3px 0 !important; font-size: 11px !important; line-height:1.25 !important; }
+  .home-event-buttons { gap: 7px !important; margin-top: 2px; }
+  .home-event-buttons button { min-height: 34px !important; padding: 5px 4px !important; font-size: 10px !important; border-radius: 10px !important; }
+  .home-feature-grid { grid-template-columns: repeat(3,minmax(0,1fr)) !important; gap: 7px !important; margin-top: 9px !important; }
+  .home-feature {
+    min-height: 78px !important; gap: 3px !important; padding: 6px 3px !important;
+    border: 1px solid #e4e8ec !important; border-radius: 12px !important;
+    background: #fff !important; box-shadow: 0 1px 3px rgba(23,50,82,.05) !important;
+  }
+  .feature-icon { font-size: 22px !important; line-height: 1 !important; }
+  .home-feature strong { font-size: 10px !important; line-height:1.2 !important; }
+  .home-feature small { font-size: 9px !important; line-height:1.15 !important; }
+  #appShell > nav.bottom {
+    position: fixed !important; z-index: 1000 !important; left: 8px !important; right: 8px !important;
+    bottom: calc(5px + env(safe-area-inset-bottom)) !important; width: auto !important;
+    display: grid !important; grid-template-columns: repeat(5,minmax(0,1fr)) !important;
+    gap: 0 !important; margin: 0 !important; padding: 5px 3px !important;
+    border: 1px solid #e7d7c2 !important; border-radius: 15px !important;
+    background: rgba(255,254,250,.98) !important; box-shadow: 0 4px 18px rgba(38,5,8,.22) !important;
+  }
+  #appShell > nav.bottom button {
+    min-width:0 !important; width:100% !important; height:44px !important; min-height:44px !important;
+    display:flex !important; flex-direction:column !important; align-items:center !important; justify-content:center !important;
+    gap:2px !important; padding:3px 0 !important; margin:0 !important; overflow:hidden !important;
+    border:0 !important; border-radius:9px !important; background:transparent !important;
+    color:#41617d !important; font-size:9px !important; line-height:1.1 !important; font-weight:700 !important;
+    box-shadow:none !important; white-space:nowrap !important;
+  }
+  #appShell > nav.bottom button.active { color:#a20e1b !important; background:#fff0e8 !important; }
+}
+@media (max-width: 360px) {
+  .home-hero { min-height: 130px; padding-left: 58px; }
+  .home-hero h1 { font-size: 32px !important; }
+  .home-hero p { font-size: 9px !important; }
+  .home-events { padding: 9px !important; }
+  .home-feature { min-height: 74px !important; }
+  .home-feature strong { font-size: 9px !important; }
+  .home-feature small { font-size: 8px !important; }
+}
+
+
+/* ===== PSSAB V30.4: MEMBER LIST CLEAN / CHAT-LIKE LAYOUT ===== */
+.members-page{max-width:760px;margin:0 auto;padding:0 2px 108px;color:var(--text)}
+.members-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 2px 14px}
+.members-heading h2{margin:0;color:var(--red);font-size:clamp(21px,5vw,28px);line-height:1.15}
+.members-heading p{margin:5px 0 0;font-size:13px;line-height:1.35}
+.members-add{flex-shrink:0;min-height:39px;padding:8px 12px;border-radius:11px;font-size:13px;white-space:nowrap}
+.members-add span{font-size:17px;vertical-align:-1px}
+.members-search{display:flex;align-items:center;gap:9px;margin:0 0 12px;padding:0 12px;border:1px solid #e5d9cc;border-radius:13px;background:#fffdf9;box-shadow:0 2px 7px #2b17100a}
+.members-search>span{font-size:25px;line-height:1;color:#7c8b9a;transform:rotate(-15deg)}
+.members-search input{min-width:0;min-height:43px;padding:8px 0;border:0;background:transparent;box-shadow:none!important;font-size:14px}
+.members-add-panel.card{max-width:none;margin:0 0 17px;padding:12px 14px;border:1px solid #e7d8c7;border-radius:15px;background:rgba(255,253,249,.97);box-shadow:0 3px 12px #2106080b}
+.members-add-summary{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.members-add-summary b{display:block;font-size:14px;color:#2d4661}
+.members-add-summary small{display:block;margin-top:3px;font-size:11px;color:#758392;line-height:1.35}
+.members-add-toggle{width:34px;min-width:34px;height:34px;min-height:34px;padding:0;border-radius:50%;font-size:22px;line-height:1}
+.members-form-actions{gap:8px}.members-password-note{font-size:12px;line-height:1.4}
+.members-list-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 4px 8px;color:#284461;font-size:14px}
+.members-list-head span{font-size:12px;color:#7a8997;font-weight:600}
+.members-list{overflow:hidden;border:1px solid #e8e7e2;border-radius:16px;background:rgba(255,255,255,.98);box-shadow:0 5px 18px #21060812}
+.member-row{padding:12px 12px 10px;border-bottom:1px solid #edf0f2;min-width:0}
+.member-row:last-child{border-bottom:0}
+.member-row-main{display:flex;align-items:center;gap:11px;min-width:0}
+.member-avatar{width:46px;height:46px;flex:0 0 46px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:50%;background:linear-gradient(145deg,#f6dfb7,#8e1017);color:#fff;font-size:19px;font-weight:850;border:1px solid #ead5bd}
+.member-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.member-row-info{flex:1;min-width:0}
+.member-name-line{display:flex;align-items:center;gap:7px;min-width:0}
+.member-name-line>b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#25415e;font-size:14px;line-height:1.25}
+.member-status{flex-shrink:0;padding:2px 6px;border-radius:20px;background:#e8f7ef;color:#16805a;font-size:9px;font-weight:800}
+.member-status.inactive{background:#fbe9e9;color:#ad2730}
+.member-meta{margin-top:3px;color:#6b7d8e;font-size:11px;line-height:1.3;overflow-wrap:anywhere}
+.member-meta strong{color:#53687b}
+.member-dot{padding:0 2px;color:#c0c8cf}
+.member-role{margin-top:3px;color:#8b969f;font-size:10px;line-height:1.2}
+.member-row-actions{display:flex;justify-content:flex-end;gap:6px;margin:9px 0 0 57px}
+.member-action{min-height:30px;padding:5px 10px;border:1px solid #dce4e9;border-radius:8px;background:#f7fafc;color:#36536e;font-size:11px;font-weight:750;box-shadow:none}
+.member-action.primary{border-color:#f0d8c4;background:#fff0e8;color:#a20e1b}
+.member-action.danger{border-color:#f2d3d3;background:#fff7f7;color:#b4232c}
+.members-empty{padding:32px 14px;text-align:center;color:#728294}
+.members-empty>span{display:block;font-size:30px;margin-bottom:8px}
+.members-empty b{display:block;color:#2e4965}
+.members-empty p{margin:5px 0 0;font-size:12px}
+.members-admin-note{margin:12px 3px 0;color:#e9d8a1;font-size:12px;line-height:1.5}
+@media(max-width:600px){
+  .members-page{padding:0 1px calc(112px + env(safe-area-inset-bottom))}
+  .members-heading{margin:2px 2px 12px}
+  .members-heading h2{font-size:21px}
+  .members-heading p{font-size:11px}
+  .members-add{min-height:36px;padding:7px 10px;font-size:12px}
+  .members-search{margin-bottom:10px}
+  .members-add-panel.card{padding:11px 12px;margin-bottom:13px}
+  .members-row{padding:10px}
+  .member-row{padding:11px 10px 9px}
+  .member-avatar{width:42px;height:42px;flex-basis:42px}
+  .member-row-main{gap:9px}
+  .member-name-line>b{font-size:13px}
+  .member-row-actions{margin-left:51px;gap:5px}
+  .member-action{min-height:29px;padding:5px 9px;font-size:10px}
+}
+@media(max-width:360px){
+  .member-name-line{flex-wrap:wrap;gap:4px}
+  .member-row-actions{margin-left:0;justify-content:flex-start}
+  .member-action{padding:5px 8px}
+}
+
+
+/* ===== PSSAB V30.5: JADWAL IBADAH MOBILE ===== */
+.schedule-page-modern{width:100%;max-width:760px;margin:0 auto;padding:8px 0 26px;color:#183655}
+.schedule-page-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 2px 14px}
+.schedule-page-heading h2{margin:0!important;color:#fff!important;font-size:21px!important;font-weight:800;letter-spacing:.1px;text-shadow:0 1px 3px #3b0005}
+.schedule-add-btn{width:38px!important;height:38px!important;min-width:38px!important;padding:0!important;border-radius:50%!important;background:#fff3df!important;color:#8e1017!important;font-size:25px!important;box-shadow:none!important}
+.schedule-monthbar{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;align-items:center;gap:8px;padding:7px 10px;margin-bottom:9px;border:1px solid #e8e1d6;border-radius:15px;background:#fffdf9;box-shadow:0 2px 8px #2408080b}
+.schedule-month-arrow{width:36px!important;height:36px!important;min-width:36px!important;padding:0!important;background:transparent!important;color:#28577a!important;font-size:27px!important;box-shadow:none!important}
+.schedule-month-label{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;min-height:36px;border:1px solid #e4eaf0;border-radius:10px;color:#1d4c75;font-size:14px;font-weight:800}
+.schedule-month-label input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.schedule-list-modern{overflow:hidden;border:1px solid #e9e4dd;border-radius:16px;background:#fffdf9;box-shadow:0 4px 14px #25050712}
+.schedule-row-modern{display:grid;grid-template-columns:58px minmax(0,1fr);gap:11px;padding:11px 12px;border-bottom:1px solid #e9edf0;align-items:start}
+.schedule-row-modern:last-child{border-bottom:0}
+.schedule-date-tile{height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;border-radius:11px;background:linear-gradient(145deg,#a70f1b,#790914);color:#fff;box-shadow:inset 0 1px 0 #ffffff24}
+.schedule-date-tile strong{font-size:20px;line-height:1.15;font-weight:900}
+.schedule-date-tile span{font-size:12px;line-height:1.3;text-transform:capitalize}
+.schedule-row-content{min-width:0;padding-top:1px}
+.schedule-row-titleline{display:flex;align-items:flex-start;justify-content:space-between;gap:7px}
+.schedule-row-titleline>b{min-width:0;color:#173d66;font-size:14px;line-height:1.3;font-weight:800;overflow-wrap:anywhere}
+.schedule-status{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;padding:3px 8px;border-radius:20px;font-size:10px;line-height:1.25;white-space:nowrap;background:#edf4f8;color:#4d7896;border:1px solid #d9e8f0}
+.schedule-status.is-next{background:#0fbd69;color:#fff;border-color:#0fbd69}
+.schedule-status.is-past{background:#f0efed;color:#8a8580;border-color:#e5e2dd}
+.schedule-row-time{margin-top:2px;color:#5a8db2;font-size:12px;line-height:1.35;font-variant-numeric:tabular-nums}
+.schedule-row-location{display:flex;align-items:flex-start;gap:4px;margin-top:2px;color:#5b8bb0;font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+.schedule-row-location span{flex:0 0 auto;font-size:11px}
+.schedule-row-actions{display:flex;align-items:center;gap:7px;margin-top:7px}
+.schedule-map-btn,.schedule-delete-btn{width:auto!important;min-height:28px!important;height:28px!important;padding:4px 9px!important;border-radius:8px!important;font-size:11px!important;font-weight:700!important;box-shadow:none!important}
+.schedule-map-btn{background:#fff0d7!important;color:#60401e!important;border:1px solid #f0dfc3!important}
+.schedule-delete-btn{background:#fff!important;color:#9a1721!important;border:1px solid #e8c5c7!important}
+.schedule-footer-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.schedule-footer-actions button,.schedule-empty button{width:auto!important;min-height:36px!important;padding:8px 12px!important;border-radius:10px!important;font-size:12px!important}
+.schedule-footer-add,.schedule-empty-secondary{background:#fff0d7!important;color:#641016!important;border:1px solid #efd7ad!important}
+.schedule-empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:28px 18px;border:1px solid #e9e4dd;border-radius:16px;background:#fffdf9;color:#243e58}
+.schedule-empty-icon{font-size:32px;color:#a20e1b}
+.schedule-empty b{font-size:16px}
+.schedule-empty p{margin:0 0 6px;color:#708094;font-size:13px}
+@media(max-width:390px){.schedule-page-modern{padding-top:5px}.schedule-page-heading h2{font-size:19px!important}.schedule-row-modern{grid-template-columns:52px minmax(0,1fr);gap:9px;padding:10px 9px}.schedule-date-tile{height:54px}.schedule-date-tile strong{font-size:18px}.schedule-row-titleline>b{font-size:13px}.schedule-status{font-size:9px;padding:3px 6px}.schedule-row-location{font-size:10px}.schedule-row-actions{gap:5px}.schedule-map-btn,.schedule-delete-btn{padding:4px 7px!important;font-size:10px!important}}
+
+
+/* ===== PSSAB V30.6: PROFIL MODERN ===== */
+.profile-modern{max-width:520px;margin:-12px auto 0;overflow:hidden;border-radius:0 0 22px 22px;background:#fffdfa;color:#163b61;box-shadow:0 5px 16px rgba(36,20,14,.16);border:1px solid rgba(215,177,101,.55);min-height:calc(100dvh - 170px)}
+.profile-modern-hero{height:105px;background:linear-gradient(145deg,#650811,#a10f1b 58%,#700811);position:relative;overflow:visible}
+.profile-modern-hero:after{content:"";position:absolute;left:-5%;right:-5%;height:42px;bottom:-24px;background:#fffdfa;transform:rotate(-5deg);border-radius:14px 14px 0 0}
+.profile-modern-top{height:54px;position:relative;z-index:2;display:flex;align-items:center;gap:12px;padding:0 14px;color:#fff}
+.profile-modern-top strong{font-size:17px;font-weight:800;flex:1}
+.profile-back,.profile-settings{border:0;background:transparent;color:#fff;width:30px;height:34px;min-width:30px;padding:0;box-shadow:none;font-size:29px;line-height:1}
+.profile-settings{font-size:23px}
+.profile-modern-content{position:relative;z-index:1;padding:0 14px 18px;margin-top:-47px}
+.profile-person{display:flex;align-items:center;flex-direction:column;text-align:center;position:relative;padding-bottom:12px}
+.profile-photo-button{position:relative;width:78px;height:78px;min-width:78px;border:3px solid #fff;background:#e7edf0;border-radius:50%;padding:0;overflow:visible;box-shadow:0 2px 8px #29110f35;margin:0 0 7px}
+.profile-photo-button img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}
+.profile-photo-button>span:first-child{width:100%;height:100%;display:grid;place-items:center;border-radius:50%;font-size:30px;font-weight:800;color:#8e1017}
+.profile-camera{position:absolute;right:-2px;bottom:0;width:23px;height:23px;display:grid;place-items:center;background:#173d60;border:2px solid #fff;border-radius:50%;font-size:12px}
+.profile-person-name{font-size:14px;line-height:1.3;font-weight:800;color:#153d67;margin-top:0}
+.profile-person-meta{font-size:12px;line-height:1.45;color:#416684}
+.profile-person-meta span{padding:0 4px}
+.profile-photo-input{display:none!important}
+.profile-menu{display:flex;flex-direction:column;gap:4px;margin-top:0}
+.profile-menu-row{display:grid;grid-template-columns:29px minmax(0,1fr) 20px;align-items:center;gap:8px;text-align:left;width:100%;min-height:31px;padding:5px 9px;background:#fff;border:1px solid #e8edf0;border-radius:10px;color:#153d67;box-shadow:none;font-size:12px;font-weight:700;line-height:1.25}
+.profile-menu-row:active{background:#fff4e8}
+.profile-menu-icon{width:23px;height:23px;display:grid;place-items:center;background:#edf3f8;border-radius:7px;color:#153d67;font-size:17px;font-weight:900}
+.profile-chevron{justify-self:end;color:#6b8ca4;font-size:22px;font-weight:400;line-height:1}
+.profile-logout-row .profile-menu-icon{background:#fff0ed;color:#a10f1b}
+.profile-logout-row{color:#8e1017}
+.profile-modal{position:fixed;inset:0;z-index:10020;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(24,10,8,.58)}
+.profile-modal-card{position:relative;width:min(420px,100%);max-height:85dvh;overflow:auto;background:#fffdfa;color:#243b50;border:1px solid #e7d3ac;border-radius:18px;padding:22px 18px 18px;box-shadow:0 20px 55px #0004}
+.profile-modal-card h3{font-size:20px;margin:0 30px 17px 0;color:#8e1017}
+.profile-modal-close{position:absolute;right:12px;top:9px;background:transparent;color:#6b5146;border:0;box-shadow:none;font-size:27px;padding:3px 8px}
+.profile-info-row{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid #ece5db;font-size:13px}
+.profile-info-row span{color:#6d7b85;flex:0 0 90px}
+.profile-info-row strong{text-align:right;overflow-wrap:anywhere}
+.profile-modal-primary{width:100%;margin-top:18px;background:#94111a;color:#fff;border:0;border-radius:11px;padding:11px 14px;font-size:14px;font-weight:800}
+.profile-about-mark{display:flex;justify-content:center;margin:4px 0 10px}
+.profile-about-mark img{width:72px;height:72px;object-fit:contain;border-radius:50%;border:2px solid #d5b46a}
+.profile-about-title{display:block;text-align:center;color:#173d60;font-size:16px}
+.profile-modal-card p{text-align:center;font-size:13px;line-height:1.5;color:#63727c}
+.profile-about-version{font-size:11px!important}
+@media(max-width:380px){.profile-modern{margin:-8px auto 0;min-height:calc(100dvh - 150px)}.profile-modern-content{padding-left:10px;padding-right:10px}.profile-modern-hero{height:96px}.profile-modern-content{margin-top:-44px}.profile-photo-button{width:72px;height:72px;min-width:72px}.profile-menu-row{min-height:30px;padding:4px 7px;font-size:11.5px}.profile-menu{gap:3px}}
+
+
+/* ===== PSSAB V30.7: QR Kehadiran Batak Premium ===== */
+.qr-attendance-shell{position:relative;overflow:hidden;margin:10px 0 16px;padding:10px;border:3px solid #f4d27b;border-radius:22px;background:linear-gradient(145deg,#5b070d,#8f101a 48%,#310609);box-shadow:0 8px 22px #21030770;color:#fff;text-align:center}
+.qr-attendance-shell:before{content:"";position:absolute;inset:7px;border:1px solid #e8bf55;border-radius:15px;pointer-events:none;background:repeating-linear-gradient(45deg,transparent 0 12px,#f2c75b14 12px 14px)}
+.qr-ornament{position:absolute;width:64px;height:64px;opacity:.95;pointer-events:none;border-color:#e6b94d}
+.qr-ornament.tl{top:8px;left:8px;border-top:3px double #e9bd53;border-left:3px double #e9bd53;border-radius:13px 0 0 0;background:radial-gradient(circle at 12px 12px,transparent 5px,#e9bd53 6px,transparent 7px),radial-gradient(circle at 27px 12px,transparent 5px,#e9bd53 6px,transparent 7px)}
+.qr-ornament.tr{top:8px;right:8px;border-top:3px double #e9bd53;border-right:3px double #e9bd53;border-radius:0 13px 0 0}
+.qr-ornament.bl{bottom:8px;left:8px;border-bottom:3px double #e9bd53;border-left:3px double #e9bd53;border-radius:0 0 0 13px}
+.qr-ornament.br{bottom:8px;right:8px;border-bottom:3px double #e9bd53;border-right:3px double #e9bd53;border-radius:0 0 13px 0}
+.qr-event-banner{position:relative;z-index:1;margin:8px auto 12px;max-width:300px;padding:10px 12px;border:1.5px solid #f5d978;border-radius:13px;background:#31060980;display:flex;justify-content:center;align-items:center;gap:12px;font-size:14px;line-height:1.45;text-align:left}
+.qr-event-banner .qrb-icon{font-size:23px;color:#ffe18a;flex-shrink:0}
+.qr-event-banner strong{font-size:15px;color:#fff;display:block}
+.qr-event-banner span{color:#ffedbd;font-size:13px}
+.qr-attendance-title{position:relative;z-index:1;margin:8px 0 10px;color:#ffe15e;font-weight:900;font-size:16px;text-shadow:0 2px 3px #280308}
+.qr-white-panel{position:relative;z-index:1;max-width:290px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 3px 12px #17030780}
+.qr-code-area{padding:9px 8px 7px;display:flex;align-items:center;justify-content:center;min-height:170px}
+.qr-code-area #qrcode{display:flex;align-items:center;justify-content:center;max-width:100%}
+.qr-code-area canvas,.qr-code-area img{display:block;width:min(220px,62vw)!important;height:min(220px,62vw)!important;max-width:100%;image-rendering:pixelated}
+.qr-live-band{background:linear-gradient(90deg,#0bbf9a,#10d4ad);padding:9px 8px 8px;color:#fff;font-weight:900;font-size:14px}
+.qr-live-band .qr-live-icon{display:inline-grid;place-items:center;width:23px;height:23px;margin-right:5px;border-radius:50%;background:#fff;color:#10a986;font-size:16px;vertical-align:middle}
+.qr-live-band small{display:block;font-size:10px;font-weight:600;margin-top:4px;opacity:.98}
+.qr-countdown{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;max-width:280px;margin:12px auto 10px;padding:4px;border:1px solid #e8c44f;border-radius:12px;background:#240408b8}
+.qr-count-unit{border:1px solid #cf2335;border-radius:8px;padding:5px 2px 4px;background:linear-gradient(180deg,#6e0711,#31050a);box-shadow:inset 0 0 0 1px #ffffff0c}
+.qr-count-unit strong{display:block;font-size:21px;line-height:1.05;color:#fff}
+.qr-count-unit span{font-size:11px;color:#ffe5dc}
+.qr-instruction{position:relative;z-index:1;margin:10px 0 6px;font-size:11px;font-weight:700;color:#fff}
+.qr-close-btn{position:relative;z-index:1;margin:8px auto 3px!important;background:#fff1d4!important;color:#4c1b10!important;border:1px solid #eac45e!important;font-size:13px!important;padding:8px 15px!important}
+@media(max-width:380px){.qr-attendance-shell{padding:8px;border-radius:18px}.qr-event-banner{padding:8px;font-size:13px}.qr-attendance-title{font-size:14px}.qr-white-panel{max-width:260px}.qr-code-area canvas,.qr-code-area img{width:min(200px,58vw)!important;height:min(200px,58vw)!important}.qr-countdown{max-width:250px}.qr-count-unit strong{font-size:19px}}
+
+
+
+/* PSSAB V30.9: logo topbar lebih jelas; lonceng hanya di Beranda */
+@media (max-width: 600px) {
+  #appShell > header.pssab-topbar {
+    min-height: 86px !important;
+    padding: 9px 12px !important;
+    grid-template-columns: 68px minmax(0, 1fr) 38px !important;
+    gap: 10px !important;
+  }
+  #appShell > header.pssab-topbar .topbar-brand {
+    width: 68px !important;
+    height: 68px !important;
+    min-width: 68px !important;
+  }
+  #appShell > header.pssab-topbar .topbar-logo {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    padding: 2px !important;
+  }
+  #appShell > header.pssab-topbar .topbar-greeting strong {
+    font-size: 15px !important;
+  }
+  #appShell > header.pssab-topbar #topbarMemberName {
+    font-size: 14px !important;
+  }
+}
+#appShell:not(.home-active) > header.pssab-topbar #notificationBtn {
+  display: none !important;
+}
+#appShell:not(.home-active) > header.pssab-topbar .topbar-actions {
+  width: 38px;
+  min-width: 38px;
+}
+
+
+/* PSSAB V30.10: brand topbar seragam di semua dashboard, tanpa ikon notifikasi */
+#appShell > header.pssab-brand-topbar {
+  display: grid !important;
+  grid-template-columns: 136px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 18px !important;
+  width: 100% !important;
+  min-height: 172px !important;
+  padding: 16px 22px !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(110deg, #650810 0%, #8c0b13 56%, #57070c 100%) !important;
+  border: 0 !important;
+  border-bottom: 2px solid #d7a62a !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#appShell > header.pssab-brand-topbar .topbar-brand {
+  width: 132px !important; height: 132px !important; min-width: 132px !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+}
+#appShell > header.pssab-brand-topbar .topbar-logo {
+  display: block !important; width: 124px !important; height: 124px !important;
+  min-width: 124px !important; object-fit: contain !important; padding: 0 !important;
+  margin: 0 !important; border: 2px solid #d7a62a !important; border-radius: 50% !important;
+  background: transparent !important; box-shadow: 0 2px 8px #21020580 !important;
+}
+#appShell > header.pssab-brand-topbar .pssab-brand-copy { min-width: 0; color: #fff; line-height: 1.22; }
+#appShell > header.pssab-brand-topbar .pssab-brand-title {
+  margin: 0 0 3px; color: #ffd56b; font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(34px, 5.3vw, 58px); font-weight: 900; letter-spacing: 2px; line-height: 1.05;
+}
+#appShell > header.pssab-brand-topbar .pssab-brand-line {
+  color: #fff; font-size: clamp(12px, 1.9vw, 20px); font-weight: 800; line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+#appShell > header.pssab-brand-topbar .topbar-actions,
+#appShell > header.pssab-brand-topbar #notificationBtn,
+#appShell > header.pssab-brand-topbar .topbar-icon,
+#appShell > header.pssab-brand-topbar .topbar-profile { display: none !important; }
+@media (max-width: 600px) {
+  #appShell > header.pssab-brand-topbar {
+    grid-template-columns: 88px minmax(0, 1fr) !important; gap: 12px !important;
+    min-height: 122px !important; padding: 10px 12px !important;
+  }
+  #appShell > header.pssab-brand-topbar .topbar-brand { width: 86px !important; height: 86px !important; min-width: 86px !important; }
+  #appShell > header.pssab-brand-topbar .topbar-logo { width: 82px !important; height: 82px !important; min-width: 82px !important; }
+  #appShell > header.pssab-brand-topbar .pssab-brand-title { font-size: clamp(30px, 7vw, 42px); letter-spacing: 1px; }
+  #appShell > header.pssab-brand-topbar .pssab-brand-line { font-size: clamp(10px, 2.6vw, 14px); line-height: 1.25; }
+}
+@media (max-width: 360px) {
+  #appShell > header.pssab-brand-topbar { grid-template-columns: 70px minmax(0, 1fr) !important; gap: 8px !important; padding: 8px !important; min-height: 100px !important; }
+  #appShell > header.pssab-brand-topbar .topbar-brand { width: 68px !important; height: 68px !important; min-width: 68px !important; }
+  #appShell > header.pssab-brand-topbar .topbar-logo { width: 64px !important; height: 64px !important; min-width: 64px !important; }
+  #appShell > header.pssab-brand-topbar .pssab-brand-title { font-size: 27px; }
+  #appShell > header.pssab-brand-topbar .pssab-brand-line { font-size: 9px; }
+}
+
+
+/* ===== PSSAB APP BARU — LAYER DESAIN MODERN BATak ===== */
+:root{--red:#761019;--gold:#d9ad43;--dark:#281416;--cream:#fff8eb;--muted:#766b63;--card:#fffdf8;}
+html{scroll-behavior:smooth} body{padding:10px; color:#281416; background-color:#641016; background-image:linear-gradient(135deg,rgba(35,5,10,.62),rgba(76,9,16,.70)),url('rumah-bolon-pssab-v30.png');background-position:center;background-size:cover;background-attachment:fixed}
+#loginScreen{padding:24px 14px 30px!important}
+#loginScreen>div:first-child{max-width:390px!important}
+#loginScreen>div:first-child img{width:128px!important;height:128px!important;filter:drop-shadow(0 8px 15px #18040788)}
+#loginScreen>div:first-child h1{font-family:Georgia,'Times New Roman',serif!important;font-size:clamp(36px,9vw,46px)!important;letter-spacing:3px!important;color:#e8c76b!important}
+#loginScreen>div:first-child p{font-size:12px!important;line-height:1.55!important;letter-spacing:.35px}
+#loginScreen>div:nth-child(2){max-width:390px!important;padding:18px!important;border-radius:22px!important;border:1px solid #e2bd65!important;box-shadow:0 20px 50px #17030670!important}
+#appShell{max-width:820px;margin:0 auto;overflow:hidden;border-radius:22px;background:rgba(255,248,235,.97);box-shadow:0 18px 55px #1b03064d;border:1px solid #d9ad4370}
+#appShell .pssab-brand-topbar{background:linear-gradient(130deg,#4d0b12,#86151e 62%,#4a0b10)!important;border-bottom:3px solid #d9ad43!important;box-shadow:0 7px 18px #2a03072e!important}
+#appShell .pssab-brand-title{font-family:Georgia,'Times New Roman',serif!important;letter-spacing:2px!important;color:#f1cf70!important;text-shadow:0 2px 5px #200306!important}
+#appShell .pssab-brand-line{letter-spacing:.3px!important}
+#app{padding:12px!important;min-height:55vh}
+#app .card,.card{border:1px solid #e4cfaa;border-radius:19px;box-shadow:0 8px 24px rgba(52,19,15,.09)}
+#app h1,#app h2,#app h3{letter-spacing:-.2px}
+#app button,#appShell nav.bottom button{transition:transform .16s ease,filter .16s ease}
+#app button:active,#appShell nav.bottom button:active{transform:scale(.97)}
+#appShell nav.bottom{background:#fffaf1!important;border-top:1px solid #d9ad43!important;box-shadow:0 -6px 18px #32100d12!important}
+#appShell nav.bottom button{color:#5d1720!important;font-weight:800!important}
+#appShell nav.bottom button.active,#appShell nav.bottom button:focus{color:#a21c27!important}
+button{background-image:linear-gradient(135deg,rgba(255,255,255,.08),transparent)!important}
+input,select,textarea{border-radius:13px!important}
+.toast{border:1px solid #e4c36c!important;border-radius:14px!important}
+@media(max-width:480px){body{padding:0!important}#appShell{border-radius:0;border-left:0;border-right:0;min-height:100vh}#app{padding:10px!important}#loginScreen>div:first-child p{max-width:320px}#appShell .pssab-brand-line{line-height:1.35!important}}
+
+
+/* ===== PSSAB DASHBOARD REDESIGN 1.1: clean and compact ===== */
+#appShell.home-active main{padding:0 10px 92px!important;max-width:760px;margin:0 auto}
+#appShell.home-active .home-hero{min-height:154px!important;margin:0 -10px 12px!important;padding:18px 16px 18px 96px!important;align-items:flex-end!important;background-image:linear-gradient(90deg,rgba(45,5,10,.72),rgba(45,5,10,.18)),url('rumah-bolon-pssab-v30.png')!important;background-size:cover!important;background-position:center 58%!important;border-bottom:2px solid #d7a62a!important}
+#appShell.home-active .home-hero:before{background:linear-gradient(0deg,rgba(36,4,8,.5),transparent 85%)!important}
+#appShell.home-active .home-hero h1{font-size:34px!important;letter-spacing:1.5px!important;margin-bottom:7px!important}
+#appShell.home-active .home-hero p{max-width:440px;font-size:10px!important;line-height:1.55!important;letter-spacing:.25px;font-weight:750!important}
+#appShell.home-active .home-events{margin:0!important;padding:13px!important;border-radius:16px!important;border:1px solid #ead6ac!important;box-shadow:0 3px 12px rgba(35,8,10,.12)!important}
+#appShell.home-active .home-section-title{display:flex;gap:8px;align-items:center;justify-content:space-between}
+#appShell.home-active .home-section-title h2{margin:0!important;font-size:14px!important;color:#71121b!important}
+#appShell.home-active .home-see-all{white-space:nowrap!important}
+#appShell.home-active .home-event-card{margin:0!important;background:#fffaf1!important;border:1px solid #f0e4ce!important;grid-template-columns:52px minmax(0,1fr)!important}
+#appShell.home-active .home-event-buttons{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;margin-top:7px!important}
+#appShell.home-active .home-event-buttons button{min-height:38px!important;font-size:11px!important}
+#appShell.home-active .home-feature-grid{margin-top:13px!important;gap:9px!important}
+#appShell.home-active .home-feature{min-height:88px!important;padding:10px 4px!important;border-radius:13px!important;border:1px solid #eadfce!important;box-shadow:0 2px 6px rgba(42,12,14,.06)!important}
+#appShell.home-active .home-feature strong{font-size:11px!important;color:#47131a!important}
+#appShell.home-active .home-feature small{font-size:9px!important;color:#6c6870!important;line-height:1.25!important}
+#appShell.home-active .home-feature:focus-visible{outline:2px solid #d7a62a;outline-offset:2px}
+#appShell.home-active > nav.bottom{backdrop-filter:blur(10px)}
+@media(max-width:380px){
+ #appShell.home-active .home-hero{min-height:142px!important;padding:15px 10px 15px 76px!important}
+ #appShell.home-active .home-hero h1{font-size:29px!important}
+ #appShell.home-active .home-hero p{font-size:9px!important}
+ #appShell.home-active .home-events{padding:10px!important}
+ #appShell.home-active .home-feature-grid{gap:6px!important}
+ #appShell.home-active .home-feature{min-height:80px!important}
+}
+
+</style>
+
+<style id="pssab-about-redesign-v13">
+/* Tentang Aplikasi: Rumah Bolon + identitas emas */
+.pssab-about-overlay{background:rgba(18,2,5,.78)!important;backdrop-filter:blur(4px)!important;padding:12px!important}
+.pssab-about-card{width:min(440px,100%)!important;max-height:90dvh!important;overflow:auto!important;position:relative!important;isolation:isolate!important;text-align:center!important;color:#fff7e6!important;border:2px solid #d7a62a!important;border-radius:22px!important;padding:24px 20px 20px!important;background:linear-gradient(180deg,rgba(50,4,9,.58),rgba(40,3,7,.94)),url('rumah-bolon-pssab-v30.png') center/cover no-repeat!important;box-shadow:0 22px 65px #0009!important}
+.pssab-about-card h3{color:#f5ce61!important;text-align:center!important;font-family:Georgia,'Times New Roman',serif!important;font-size:19px!important;letter-spacing:1.5px!important;margin:0 34px 18px!important;text-shadow:0 2px 5px #210205!important}
+.pssab-about-close{color:#ffe18a!important;background:#651019!important;border:1px solid #d7a62a!important}
+.pssab-about-mark{display:flex!important;justify-content:center!important;margin:6px auto 16px!important}
+.pssab-about-mark img{width:112px!important;height:112px!important;object-fit:contain!important;border-radius:50%!important;border:3px solid #e5bd48!important;box-shadow:0 0 0 5px #4b090d99,0 8px 22px #0008!important}
+.pssab-about-title{display:block!important;text-align:center!important;color:#ffdc72!important;font-family:Georgia,'Times New Roman',serif!important;font-size:clamp(22px,6vw,29px)!important;font-weight:900!important;letter-spacing:.8px!important;text-shadow:0 2px 5px #210205!important;margin:0 0 14px!important}
+.pssab-about-description{color:#fff8e8!important;font-family:Georgia,'Times New Roman',serif!important;font-size:14px!important;font-weight:800!important;line-height:1.65!important;letter-spacing:.35px!important;text-align:center!important;margin:0 auto 18px!important;max-width:360px!important;text-shadow:0 2px 4px #210205!important}
+.pssab-about-version{display:inline-block!important;color:#ffdc72!important;font-family:Georgia,'Times New Roman',serif!important;font-size:19px!important;font-weight:900!important;letter-spacing:1.4px!important;padding:10px 18px!important;border:2px solid #d7a62a!important;border-radius:999px!important;background:#4d080eaa!important;text-shadow:0 2px 4px #210205!important;margin:0 auto 18px!important}
+.pssab-about-button{display:block!important;width:min(230px,100%)!important;margin:0 auto!important;background:linear-gradient(135deg,#8e1017,#5c080e)!important;color:#fff8e8!important;border:2px solid #e6c34f!important;border-radius:999px!important;font-weight:800!important;box-shadow:0 5px 14px #0005!important}
+@media(max-width:380px){.pssab-about-card{padding:20px 14px 16px!important}.pssab-about-mark img{width:94px!important;height:94px!important}.pssab-about-description{font-size:12px!important}}
+</style>
+
+</head>
+<body>
+<div id="loginScreen" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px 14px 24px;background:transparent">
+
+  <!-- LOGO DAN JUDUL -->
+
+  <div style="width:100%;max-width:340px;text-align:center;color:#fff">
+    <img src="pssab-logo.png" alt="Logo PSSAB" style="width:116px;height:116px;object-fit:contain;border-radius:50%;display:block;margin:0 auto 6px">
+
+<h1 style="font-size:30px;line-height:1.1;margin:5px 0;color:#ffd875;text-shadow:1px 2px 4px #000">PSSAB</h1>
+
+<p style="font-size:13px;line-height:1.4;font-weight:800;margin:5px auto 12px;color:#fff;text-shadow:1px 2px 4px #000">
+  HORAS JALA GABE PUNGUAN SITUMORANG SIPITU AMA BORU BERE IBEBERE SEKTOR TANJUNG UNCANG
+</p>
+  </div>
+  <!-- KARTU LOGIN -->
+  <div style="width:100%;max-width:340px;padding:12px;background:#fffdf8;border:1px solid #e5d4b5;border-radius:18px;box-shadow:0 10px 28px #0005"> 
+ <div class="field" style="margin:5px 0;padding:0;background:transparent;border:0">
+  <input id="loginEmail" type="email" placeholder="✉  Email atau No. HP" autocomplete="username" style="width:100%;min-height:40px;padding:9px 11px;border:1px solid #dce1e8;border-radius:10px;background:#fff;color:#251c18;font-size:13px">
+ </div>
+<div class="field" style="margin:7px 0;padding:0;background:transparent;border:0">
+  <input id="loginPassword" type="password" placeholder="🔒  Password" autocomplete="current-password" style="width:100%;min-height:40px;padding:9px 11px;border:1px solid #dce1e8;border-radius:10px;background:#fff;color:#251c18;font-size:13px">
+</div>
+<button id="loginBtn" onclick="login()" style="width:100%;min-height:40px;margin-top:5px;border:0;border-radius:10px;background:#8e1017;color:#fff;font-size:14px;font-weight:800">Masuk　›</button>
+<button class="btn2" onclick="showSignup()" style="width:100%;min-height:36px;margin-top:7px;border:0;border-radius:9px;background:#fff0d5;color:#641016;font-size:12px;font-weight:700">♙　Daftar anggota baru</button>
+<button class="btn2" onclick="resetPassword()" style="width:100%;min-height:32px;margin-top:3px;border:0;border-radius:9px;background:transparent;color:#173d60;font-size:12px;font-weight:700">🔒　Lupa password?</button>
+
+<p id="loginStatus" class="muted" style="margin:7px 0 0;text-align:center;font-size:11px;line-height:1.4">Memeriksa sesi login...</p>
+ </div>
+</div>
+<div id="signupScreen" style="display:none;min-height:100vh;align-items:center;justify-content:center;padding:18px;background:var(--cream)">
+  <div class="card" style="width:100%;max-width:430px">
+    <div class="row" style="justify-content:space-between"><h2 style="margin:0">Daftar Anggota Baru</h2><button class="btn2" onclick="showLogin()">Kembali</button></div>
+    <p class="muted">Buat akun sendiri. Setelah daftar, pilih jenis anggota.</p>
+    <div class="field"><input id="suName" placeholder="Nama lengkap"></div>
+    <div class="field"><input id="suPhone" placeholder="No. HP (opsional)" inputmode="tel"></div>
+    <div class="field"><input id="suEmail" type="email" placeholder="Email" autocomplete="email"></div>
+    <div class="field"><input id="suPassword" type="password" placeholder="Password (min. 8 karakter)" autocomplete="new-password"></div>
+    <div class="field"><label>Jenis anggota</label><select id="suBona" onchange="syncTypeRelation(this.value,'suRel')"><option value="01">01 — Bona</option><option value="02">02 — Boru</option><option value="03">03 — Bere</option><option value="04">04 — Iba Bere</option></select></div>
+    <input type="hidden" id="suRel" value="Bona">
+    <button id="signupBtn" onclick="signup()" style="width:100%">Daftar</button>
+    <p id="signupStatus" class="muted" style="margin-top:14px"></p>
+  </div>
+</div>
+<div id="setupScreen" style="display:none;min-height:100vh;align-items:center;justify-content:center;padding:18px;background:var(--cream)">
+  <div class="card" style="width:100%;max-width:430px">
+    <h2>Lengkapi Profil Anggota</h2>
+    <p class="muted">Akun sudah berhasil dibuat. Lengkapi data berikut untuk mendapatkan ID anggota.</p>
+    <div class="field"><input id="spName" placeholder="Nama lengkap"></div>
+    <div class="field"><input id="spPhone" placeholder="No. HP (opsional)" inputmode="tel"></div>
+    <div class="field"><label>Jenis anggota</label><select id="spBona" onchange="syncTypeRelation(this.value,'spRel')"><option value="01">01 — Bona</option><option value="02">02 — Boru</option><option value="03">03 — Bere</option><option value="04">04 — Iba Bere</option></select></div>
+    <input type="hidden" id="spRel" value="Bona">
+    <button id="setupBtn" onclick="createProfile()" style="width:100%">Simpan Profil & Masuk</button>
+    <button class="btn2" onclick="logout()" style="width:100%;margin-top:8px">Keluar</button>
+    <p id="setupStatus" class="muted" style="margin-top:14px"></p>
+  </div>
+</div>
+  </div>
+</div>
+<div id="appShell" style="display:none">
+<header class="pssab-topbar pssab-brand-topbar" aria-label="Identitas PSSAB">
+  <div class="topbar-brand">
+    <img src="pssab-logo.png" alt="Logo PSSAB" class="topbar-logo">
+  </div>
+  <div class="pssab-brand-copy">
+    <div class="pssab-brand-title">PSSAB</div>
+    <div class="pssab-brand-line">PSSAB SEKTOR TANJUNG UNCANG BATAM</div>
+    <div class="pssab-brand-line">PUNGUAN SITUMORANG SIPITU AMA BORU BERE IBEBERE</div>
+  </div>
+</header>
+<main id="app"></main>
+<nav class="bottom">
+<button onclick="go('home')" id="n-home">⌂<br>Beranda</button>
+<button onclick="go('members')" id="n-members">👥<br>Anggota</button>
+<button onclick="go('schedule')" id="n-schedule">📅<br>Ibadah</button>
+<button onclick="go('chat')" id="n-chat">💬<br>Chat</button>
+<button onclick="go('profile')" id="n-profile">●<br>Profil</button>
+</nav>
+</div>
+<div class="toast" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="config.js"></script>
+<script>
+window.PSSAB_BUILD="PSSAB-APP-BARU-1.2-RUMAH-BOLON-ALL-DASHBOARDS";
+const SB = window.supabase.createClient(window.PSSAB_CONFIG.SUPABASE_URL, window.PSSAB_CONFIG.SUPABASE_ANON_KEY);
+let state = { user:null, profile:null, members:[], schedules:[], messages:[], attendance:[], docs:[], loading:false, page:'home' };
+const app=()=>document.getElementById('app');
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function toast(s){const e=document.getElementById('toast');e.textContent=s;e.style.display='block';setTimeout(()=>e.style.display='none',1800)}
+function go(p){
+  const target=String(p||'home');
+  state.page=target;
+  if(location.hash.slice(1)!==target) location.hash=target;
+  render(target);
+}
+function isManager(){return ['Admin','Ketua','Sekretaris'].includes(state.profile?.role)}
+function mapTo(s){const text=String(s||'').trim();if(!text)return toast('Lokasi belum tersedia');const q=encodeURIComponent(text);const url='https://www.google.com/maps/search/?api=1&query='+q;location.assign(url)}
+function setNav(p){document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));document.getElementById('n-'+(p==='admin'?'profile':p))?.classList.add('active')}
+async function loadAll(){
+  if(!state.user)return;
+  const results=await Promise.allSettled([
+    SB.from('profiles').select('*').eq('active',true).order('member_seq',{ascending:true}).order('name'),
+    SB.from('schedules').select('*').order('event_date',{ascending:true}),
+    SB.from('messages').select('id,text,created_at,sender_id,profiles(name,role)').order('created_at'),
+    SB.from('attendance').select('*'),
+    SB.from('documentation').select('id,image_url,caption,created_at,uploader_id,profiles(name)').order('created_at',{ascending:false})
+  ]);
+  const names=['anggota','jadwal','chat','presensi','dokumentasi'];
+  let failed=[];
+  results.forEach((r,i)=>{
+    if(r.status==='rejected'){ failed.push(names[i]); return; }
+    const q=r.value;
+    if(q.error){ failed.push(names[i]); return; }
+    if(i===0) state.members=q.data||[];
+    if(i===1) state.schedules=q.data||[];
+    if(i===2) state.messages=q.data||[];
+    if(i===3) state.attendance=q.data||[];
+    if(i===4) state.docs=q.data||[];
+  });
+  if(failed.length) console.warn('PSSAB data gagal dimuat:',failed.join(', '));
+}
+async function boot(){
+  const status=document.getElementById('loginStatus');
+  try{
+    if(!window.supabase){showLogin('Koneksi login belum termuat. Periksa internet lalu refresh.');return}
+    if(status)status.textContent='Memeriksa sesi login...';
+    const {data:{session},error:se}=await SB.auth.getSession();
+    if(se) throw se;
+    state.user=session?.user||null;
+    if(!state.user){showLogin('Silakan masukkan email dan password.');return}
+    showApp();
+    const {data:p,error}=await SB.from('profiles').select('*').eq('id',state.user.id).maybeSingle();
+    if(error) throw error;
+    state.profile=p||null;
+    if(!state.profile){showSetup();return}
+    render();
+    try{await loadAll();}catch(e){console.error(e);toast('Data belum termuat: '+e.message)}
+    render(); subscribeRealtime();
+  }catch(e){
+    console.error('BOOT ERROR',e);state.user=null;state.profile=null;showLogin('Koneksi aplikasi bermasalah. Tekan refresh dan coba lagi.');
+  }
+}
+async function login(){
+  const email=document.getElementById('loginEmail')?.value.trim();
+  const password=document.getElementById('loginPassword')?.value;
+  const btn=document.getElementById('loginBtn');
+  const status=document.getElementById('loginStatus');
+  if(!email||!password){if(status)status.textContent='Isi email dan password.';return}
+  if(!window.supabase){if(status)status.textContent='Koneksi login belum termuat. Tekan refresh lalu coba lagi.';return}
+  if(btn){btn.disabled=true;btn.textContent='Memeriksa...'}
+  try{
+    const {data,error}=await SB.auth.signInWithPassword({email,password});
+    if(error){if(status)status.textContent=error.message;return}
+    state.user=data.user;
+    const {data:p,error:pe}=await SB.from('profiles').select('*').eq('id',data.user.id).maybeSingle();
+    if(pe){if(status)status.textContent=pe.message;return}
+    state.profile=p||null;
+    if(!state.profile){showSetup();return}
+    render(); await loadAll(); render(); subscribeRealtime(); toast('Selamat datang, '+state.profile.name);
+  }catch(e){console.error(e);if(status)status.textContent='Login gagal: '+(e.message||e)}
+  finally{if(btn){btn.disabled=false;btn.textContent='Masuk'}}
+}
+async function logout(){await SB.auth.signOut();state={user:null,profile:null,members:[],schedules:[],messages:[],attendance:[],docs:[],loading:false,page:'home'};showLogin('Silakan masukkan email dan password.');}
+async function resetPassword(){const email=document.getElementById('loginEmail')?.value.trim();if(!email)return toast('Isi email dulu');const {error}=await SB.auth.resetPasswordForEmail(email,{redirectTo:location.origin+location.pathname});toast(error?error.message:'Link reset password dikirim ke email')}
+function hideAuthScreens(){['loginScreen','signupScreen','setupScreen'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none'});}
+function showLogin(message='Silakan login untuk melanjutkan.'){
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('signupScreen').style.display='none';
+  document.getElementById('setupScreen').style.display='none';
+  document.getElementById('appShell').style.display='none';
+  const s=document.getElementById('loginStatus'); if(s)s.textContent=message;
+}
+function showSignup(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('signupScreen').style.display='flex';
+  document.getElementById('setupScreen').style.display='none';
+  document.getElementById('appShell').style.display='none';
+  const s=document.getElementById('signupStatus'); if(s)s.textContent='';
+}
+function showSetup(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('signupScreen').style.display='none';
+  document.getElementById('setupScreen').style.display='flex';
+  document.getElementById('appShell').style.display='none';
+  const n=document.getElementById('spName'); if(n&&!n.value)n.value=state.user?.user_metadata?.name||'';
+  const s=document.getElementById('setupStatus'); if(s)s.textContent='';
+}
+function showApp(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('signupScreen').style.display='none';
+  document.getElementById('setupScreen').style.display='none';
+  document.getElementById('appShell').style.display='block';
+}
+function syncTypeRelation(code, relId){const map={"01":"Bona","02":"Boru","03":"Bere","04":"Iba Bere"};const e=document.getElementById(relId);if(e)e.value=map[code]||"Bona";}
+async function signup(){
+  const name=document.getElementById('suName')?.value.trim();
+  const phone=document.getElementById('suPhone')?.value.trim()||'';
+  const email=document.getElementById('suEmail')?.value.trim();
+  const password=document.getElementById('suPassword')?.value||'';
+  const bona=document.getElementById('suBona')?.value||'01';
+  const rel=document.getElementById('suRel')?.value||'Bona';
+  const btn=document.getElementById('signupBtn'), status=document.getElementById('signupStatus');
+  if(!name||!email||!password){if(status)status.textContent='Nama, email dan password wajib diisi.';return}
+  if(password.length<8){if(status)status.textContent='Password minimal 8 karakter.';return}
+  if(btn){btn.disabled=true;btn.textContent='Mendaftarkan...'}
+  try{
+    const {data,error}=await SB.auth.signUp({email,password,options:{data:{name,phone,bona_group_code:bona,relationship:rel}}});
+    if(error){if(status)status.textContent=error.message;return}
+    state.user=data.user||null;
+    if(data.session&&state.user){
+      const {data:p,error:pe}=await SB.from('profiles').select('*').eq('id',state.user.id).maybeSingle();
+      if(pe) throw pe;
+      if(p){state.profile=p;showApp();await loadAll();render();subscribeRealtime();toast('Pendaftaran berhasil');return}
+      document.getElementById('spName').value=name;document.getElementById('spPhone').value=phone;document.getElementById('spBona').value=bona;document.getElementById('spRel').value=rel;showSetup();return;
+    }
+    if(status)status.textContent='Pendaftaran berhasil. Periksa email untuk konfirmasi, lalu kembali ke halaman Masuk.';
+  }catch(e){console.error(e);if(status)status.textContent='Pendaftaran gagal: '+(e.message||e)}
+  finally{if(btn){btn.disabled=false;btn.textContent='Daftar'}}
+}
+async function createProfile(){
+  if(!state.user)return showLogin('Sesi belum aktif. Silakan login.');
+  const name=document.getElementById('spName')?.value.trim();
+  const phone=document.getElementById('spPhone')?.value.trim()||'';
+  const bona=document.getElementById('spBona')?.value||'01';
+  const relationship=document.getElementById('spRel')?.value||'Bona';
+  const btn=document.getElementById('setupBtn'),status=document.getElementById('setupStatus');
+  if(!name){if(status)status.textContent='Nama lengkap wajib diisi.';return}
+  if(btn){btn.disabled=true;btn.textContent='Menyimpan...'}
+  try{
+    const {data,error}=await SB.rpc('create_my_profile',{p_name:name,p_phone:phone,p_bona_group_code:bona,p_relationship:relationship});
+    if(error)throw error;
+    if(data?.error)throw new Error(data.error);
+    const {data:p,error:pe}=await SB.from('profiles').select('*').eq('id',state.user.id).single();
+    if(pe)throw pe;
+    state.profile=p;
+    showApp();await loadAll();render();subscribeRealtime();toast('Profil berhasil dibuat • ID '+(p.member_id||''));
+  }catch(e){console.error(e);if(status)status.textContent='Gagal membuat profil: '+(e.message||e)}
+  finally{if(btn){btn.disabled=false;btn.textContent='Simpan Profil & Masuk'}}
+}
+function render(forcedPage){
+ if(!state.user){showLogin('Silakan login untuk melanjutkan.');return}
+ showApp();
+
+const nameEl = document.getElementById('topbarMemberName');
+if (nameEl) {
+  nameEl.textContent =
+    state.profile?.name ||
+    state.profile?.full_name ||
+    state.user?.user_metadata?.full_name ||
+    state.user?.user_metadata?.name ||
+    state.user?.email?.split('@')[0] ||
+    'Anggota PSSAB';
+}
+ if(!state.profile){document.querySelector('.bottom').style.display='none';app().innerHTML='<div class="card"><h2>Memuat profil...</h2><p class="muted">Mohon tunggu sebentar.</p></div>';return}
+ document.querySelector('.bottom').style.display='flex';
+ let p=String(forcedPage||state.page||location.hash.slice(1)||'home');
+ state.page=p;
+ document.getElementById('appShell')?.classList.toggle('home-active', p === 'home');
+ setNav(p);
+ try{
+   if(p.startsWith('checkin?')){checkinFromQR();return}
+   if(p.startsWith('profile?member=')){memberProfile(decodeURIComponent(p.split('profile?member=')[1]||''));return}
+   if(p==='home')home();
+   else if(p==='members')members();
+   else if(p==='schedule')renderSchedulePage();
+   else if(p==='chat')chat();
+   else if(p==='attendance')attendance();
+   else if(p==='docs')docs();
+   else if(p==='admin')admin();
+   else profile();
+ }catch(e){
+   console.error('PSSAB RENDER ERROR',p,e);
+   app().innerHTML='<h2>Jadwal Ibadah</h2><div class="card"><h3>Halaman berhasil dibuka</h3><p class="muted">Terjadi kesalahan saat memuat isi halaman. Tekan Muat Ulang untuk mencoba lagi.</p><button onclick="location.reload()">Muat Ulang</button></div>';
+ }
+}
+        
+function home(){
+ const s = state.schedules?.[0];
+ const profile = state.profile || {};
+ const user = state.user || {};
+  const name = profile.name || 'Anggota';
+  const photo = profile.photo_url || profile.avatar_url || '';
+  const initial = name.trim().charAt(0).toUpperCase() || 'A';
+  const avatar = document.getElementById('topbarAvatarInitial');
+  if (avatar) {
+    if (photo) avatar.innerHTML = `<img src="${esc(photo)}" alt="Foto profil">`;
+    else avatar.textContent = initial;
+  }
+
+app().innerHTML = `
+  <section class="home-hero" aria-label="Identitas PSSAB">
+    <div class="home-hero-copy">
+      <h1>PSSAB</h1>
+      <p>HORAS JALA GABE PUNGUAN<br>SITUMORANG SIPITU AMA BORU BERE IBEBERE<br>SEKTOR TANJUNG UNCANG</p>
+    </div>
+  </section>
+  <section class="home-events">
+      <div class="home-section-title">
+        <h2>▦ Jadwal Ibadah Terdekat</h2>
+        <button class="home-see-all" onclick="go('schedule')">
+          Lihat Semua ›
+        </button>
+      </div>
+
+      ${s ? `
+        <article class="home-event-card">
+          <div class="home-date">
+            <strong>${esc((s.event_date || '').slice(8,10) || '--')}</strong>
+            <span>${esc((s.event_date || '').slice(5,7) || '')}</span>
+          </div>
+          <div class="home-event-info">
+            <h3>${esc(s.title || 'Ibadah')}</h3>
+            <p>◷ ${esc(s.event_time || 'Waktu belum ditentukan')}</p>
+            <p>📍 ${esc(s.location || 'Lokasi belum ditentukan')}</p>
+          </div>
+          <div class="home-event-buttons">
+            <button onclick="go('attendance')">✓ Daftar Hadir</button>
+            <button class="home-map-button"
+              onclick='mapTo(${JSON.stringify(s.location || '')})'>
+              📍 Buka Maps
+            </button>
+          </div>
+        </article>
+      ` : `
+        <article class="home-event-card home-no-event">
+          <strong>Belum ada jadwal ibadah</strong>
+          <p>Jadwal kegiatan akan ditampilkan di sini.</p>
+          <button onclick="go('schedule')">Lihat Jadwal</button>
+        </article>
+      `}
+
+      <div class="home-feature-grid">
+        <button class="home-feature" onclick="go('members')">
+          <span class="feature-icon blue">♟♟</span>
+          <strong>Anggota</strong>
+          <small>Lihat daftar anggota</small>
+        </button>
+        <button class="home-feature" onclick="go('schedule')">
+          <span class="feature-icon red">▦</span>
+          <strong>Ibadah</strong>
+          <small>Jadwal &amp; Kehadiran</small>
+        </button>
+        <button class="home-feature" onclick="go('chat')">
+          <span class="feature-icon green">●</span>
+          <strong>Chat</strong>
+          <small>Komunikasi anggota</small>
+        </button>
+        <button class="home-feature" onclick="go('docs')">
+          <span class="feature-icon red">▣</span>
+          <strong>Dokumentasi</strong>
+          <small>Foto &amp; kegiatan</small>
+        </button>
+        <button class="home-feature" onclick="go('schedule')">
+          <span class="feature-icon green">⌖</span>
+          <strong>Peta Lokasi</strong>
+          <small>Lokasi ibadah</small>
+        </button>
+        <button class="home-feature" onclick="go('profile')">
+          <span class="feature-icon blue">☷</span>
+          <strong>Lainnya</strong>
+          <small>Profil &amp; fitur lain</small>
+        </button>
+        ${isManager() ? `
+          <button class="home-feature" onclick="go('admin')">
+            <span class="feature-icon red">⚙</span>
+            <strong>Pengurus</strong>
+            <small>Kelola kegiatan</small>
+          </button>
+        ` : ''}
+      </div>
+    </section>
+  `;
+}
+
+function makeToken(){if(window.crypto?.randomUUID)return crypto.randomUUID().replaceAll('-','');return Math.random().toString(36).slice(2)+Date.now().toString(36)}
+function scheduleStart(s){if(!s?.event_date||!s?.event_time)return null;const d=new Date(`${s.event_date}T${s.event_time}:00+07:00`);return isNaN(d)?null:d}
+function checkinWindow(s){const start=scheduleStart(s);if(!start)return null;return {open:new Date(start.getTime()-60*60000),close:new Date(start.getTime()+120*60000)}}
+function formatTime(d){return d?d.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}):'-'}
+function scheduleMonthKey(date=new Date()){
+  return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}`;
+}
+window.pssabScheduleMonth = window.pssabScheduleMonth || scheduleMonthKey();
+function setScheduleMonth(value){
+  if(/^\d{4}-\d{2}$/.test(value)) window.pssabScheduleMonth=value;
+  renderSchedulePage();
+}
+function shiftScheduleMonth(delta){
+  const [y,m]=String(window.pssabScheduleMonth||scheduleMonthKey()).split('-').map(Number);
+  const d=new Date(y,m-1+delta,1);
+  window.pssabScheduleMonth=scheduleMonthKey(d);
+  renderSchedulePage();
+}
+function renderSchedulePage(){
+  const rows=Array.isArray(state.schedules)?state.schedules:[];
+  const key=window.pssabScheduleMonth||scheduleMonthKey();
+  const [year,month]=key.split('-').map(Number);
+  const monthDate=new Date(year,month-1,1);
+  const monthLabel=monthDate.toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+  const monthRows=rows.filter(s=>String(s.event_date||'').slice(0,7)===key).sort((a,b)=>String(a.event_date||'').localeCompare(String(b.event_date||''))||String(a.event_time||'').localeCompare(String(b.event_time||'')));
+  const now=new Date();
+  const futureRows=monthRows.filter(s=>{const d=scheduleStart(s);return d ? d>=now : String(s.event_date||'')>=now.toISOString().slice(0,10)});
+  const nextId=futureRows.length?futureRows[0].id:null;
+  let html=`<section class="schedule-page-modern">
+    <div class="schedule-page-heading"><h2>Jadwal Ibadah</h2>${isManager()?'<button class="schedule-add-btn" onclick="go(\'admin\')" aria-label="Tambah jadwal">＋</button>':''}</div>
+    <div class="schedule-monthbar">
+      <button class="schedule-month-arrow" onclick="shiftScheduleMonth(-1)" aria-label="Bulan sebelumnya">‹</button>
+      <label class="schedule-month-label"><span>${esc(monthLabel.charAt(0).toLocaleUpperCase('id-ID')+monthLabel.slice(1))}</span><input aria-label="Pilih bulan jadwal" type="month" value="${key}" onchange="setScheduleMonth(this.value)"></label>
+      <button class="schedule-month-arrow" onclick="shiftScheduleMonth(1)" aria-label="Bulan berikutnya">›</button>
+    </div>`;
+  if(!monthRows.length){
+    html+=`<div class="schedule-empty"><div class="schedule-empty-icon">▦</div><b>Belum ada jadwal ibadah</b><p>Belum ada jadwal untuk ${esc(monthLabel)}.</p><button onclick="refreshSchedule()">Muat Jadwal</button>${isManager()?'<button class="schedule-empty-secondary" onclick="go(\'admin\')">＋ Tambah Jadwal</button>':''}</div>`;
+  }else{
+    html+='<div class="schedule-list-modern">'+monthRows.map(s=>{
+      const d=s.event_date?new Date(`${s.event_date}T12:00:00`):null;
+      const day=d&&!isNaN(d)?String(d.getDate()).padStart(2,'0'):'--';
+      const mon=d&&!isNaN(d)?d.toLocaleDateString('id-ID',{month:'short'}).replace('.',''):'-';
+      const start=scheduleStart(s);
+      const isFuture=start?start>=now:String(s.event_date||'')>=now.toISOString().slice(0,10);
+      const badge=s.id===nextId?'Akan Datang':isFuture?'Mendatang':'Selesai';
+      const time=esc(s.event_time||'Waktu belum ditentukan');
+      return `<article class="schedule-row-modern">
+        <div class="schedule-date-tile"><strong>${day}</strong><span>${esc(mon)}</span></div>
+        <div class="schedule-row-content"><div class="schedule-row-titleline"><b>${esc(s.title||'Ibadah')}</b><span class="schedule-status ${s.id===nextId?'is-next':isFuture?'is-future':'is-past'}">${badge}</span></div>
+          <div class="schedule-row-time">${time}</div><div class="schedule-row-location"><span aria-hidden="true">📍</span>${esc(s.location||'Lokasi belum ditentukan')}</div>
+          <div class="schedule-row-actions"><button class="schedule-map-btn" onclick='mapTo(${JSON.stringify(s.location||'')})'>⌖ <span>Buka Maps</span></button>${isManager()?`<button class="schedule-delete-btn" onclick="delSchedule('${esc(s.id)}')">Hapus</button>`:''}</div>
+        </div>
+      </article>`;
+    }).join('')+'</div>';
+  }
+  html+=`<div class="schedule-footer-actions"><button onclick="refreshSchedule()">↻ Muat Jadwal</button>${isManager()?'<button class="schedule-footer-add" onclick="go(\'admin\')">＋ Tambah Jadwal</button>':''}</div></section>`;
+  app().innerHTML=html;
+}
+async function refreshSchedule(){toast('Memuat jadwal...');await loadAll();render('schedule');}
+function members(){
+  const rows=Array.isArray(state.members)?state.members:[];
+  app().innerHTML=`<section class="members-page">
+    <div class="members-heading"><div><h2>Anggota PSSAB</h2><p class="muted">Daftar anggota dan informasi keanggotaan</p></div><button class="members-add" onclick="toggleAddMember()"><span aria-hidden="true">＋</span> Tambah</button></div>
+    <div class="members-search"><span aria-hidden="true">⌕</span><input id="memberSearch" type="search" placeholder="Cari nama atau ID anggota…" aria-label="Cari anggota" oninput="filterMembers(this.value)"></div>
+    <div class="members-add-panel card"><div class="members-add-summary"><div><b>Tambah anggota baru</b><small>Masukkan data anggota yang akan didaftarkan.</small></div><button class="members-add-toggle" onclick="toggleAddMember()" aria-label="Buka form tambah anggota">＋</button></div>
+    <div id="addMemberBox" class="hide" style="margin-top:12px"><div class="field"><input id="mn" placeholder="Nama lengkap"></div><div class="field"><input id="mp" placeholder="No. HP (opsional)" inputmode="tel"></div><div class="field"><input id="me" type="email" placeholder="Email login anggota"></div><div class="field"><input id="mw" type="password" placeholder="Password awal (min. 8 karakter)"></div><div class="field"><label>Jenis anggota</label><select id="mb" onchange="syncTypeRelation(this.value,'mrel')"><option value="01">01 — Bona</option><option value="02">02 — Boru</option><option value="03">03 — Bere</option><option value="04">04 — Iba Bere</option></select></div><input type="hidden" id="mrel" value="Bona">
+    ${isManager()?'<div class="field"><label>Peran anggota</label><select id="mr"><option>Anggota</option><option>Bendahara</option><option>Sekretaris</option><option>Ketua</option><option>Admin</option></select></div>':'<input type="hidden" id="mr" value="Anggota"><p class="muted">Anggota baru dibuat dengan peran Anggota.</p>'}
+    <div class="row members-form-actions"><button onclick="addMember()">Simpan Anggota</button><button class="btn2" onclick="toggleAddMember()">Batal</button></div><p class="muted members-password-note">Password awal diberikan kepada anggota tersebut. Setelah login, anggota dapat menggunakan aplikasi seperti biasa.</p></div></div>
+    <div class="members-list-head"><b>Semua Anggota</b><span>${rows.length} anggota</span></div>
+    <div id="membersList" class="members-list">${rows.length?rows.map((m,i)=>`<article class="member-row" data-search="${esc([m.name,m.member_id,m.relationship,m.role].filter(Boolean).join(' ').toLowerCase())}">
+      <div class="member-row-main"><div class="member-avatar">${m.profile_photo_url?`<img src="${esc(m.profile_photo_url)}" alt="Foto ${esc(m.name||'anggota')}">`:esc((m.name||'?').trim().charAt(0).toUpperCase())}</div>
+      <div class="member-row-info"><div class="member-name-line"><b>${esc(m.name||'Nama belum tersedia')}</b>${m.active===false?'<span class="member-status inactive">Nonaktif</span>':'<span class="member-status">Aktif</span>'}</div><div class="member-meta">ID <strong>${esc(m.member_id||'Belum dibuat')}</strong>${m.relationship?` <span class="member-dot">•</span> ${esc(m.relationship)}`:''}</div><div class="member-role">${esc(m.role||'Anggota')}</div></div></div>
+      <div class="member-row-actions"><button class="member-action primary" onclick="go('profile?member=${encodeURIComponent(m.id)}')">ID Card</button>${state.profile?.role==='Admin'?`<button class="member-action" onclick="editMember('${m.id}')">Edit</button><button class="member-action danger" onclick="requestDeleteMember('${m.id}')">Hapus</button>`:''}</div>
+    </article>`).join(''):'<div class="members-empty"><span>👥</span><b>Belum ada anggota</b><p>Anggota yang terdaftar akan muncul di sini.</p></div>'}</div>
+    ${state.profile?.role==='Admin'?'<p class="members-admin-note">Admin dapat mengubah data dan peran anggota, mengaktifkan atau menonaktifkan akun, serta menghapus anggota.</p>':''}
+    </section>`;
+}
+function filterMembers(query){
+  const q=String(query||'').trim().toLowerCase();
+  document.querySelectorAll('#membersList .member-row').forEach(row=>{row.style.display=(!q||(row.dataset.search||'').includes(q))?'':'none'});
+}
+function toggleAddMember(){document.getElementById('addMemberBox')?.classList.toggle('hide')}
+function requestDeleteMember(id){
+  if(state.profile?.role!=='Admin')return toast('Hanya Admin');
+  if(id===state.user.id)return toast('Akun Admin sendiri tidak dapat dihapus');
+  const m=state.members.find(x=>x.id===id);
+  if(!m)return toast('Anggota tidak ditemukan');
+  state.pendingDeleteMember={id,name:m.name||'anggota'};
+  document.getElementById('deleteMemberModal')?.remove();
+  document.body.insertAdjacentHTML('beforeend',`<div id="deleteMemberModal" class="delete-modal"><div class="delete-modal-card"><h3>Hapus Anggota?</h3><p>Yakin ingin menghapus <b>${esc(m.name||'anggota')}</b> dari daftar anggota aplikasi?</p><div class="row" style="justify-content:flex-end"><button class="btn2" onclick="closeDeleteMember()">Batal</button><button onclick="confirmDeleteMember()">Ya, Hapus</button></div></div></div>`);
+}
+function closeDeleteMember(){state.pendingDeleteMember=null;document.getElementById('deleteMemberModal')?.remove()}
+async function confirmDeleteMember(){
+  const pending=state.pendingDeleteMember;if(!pending)return;
+  const buttons=document.querySelectorAll('#deleteMemberModal button');buttons.forEach(b=>b.disabled=true);
+  const {data,error}=await SB.rpc('admin_delete_member',{p_user_id:pending.id});
+  if(error){buttons.forEach(b=>b.disabled=false);return toast(error.message||'Gagal menghapus')}
+  if(data?.error){buttons.forEach(b=>b.disabled=false);return toast(data.error)}
+  closeDeleteMember();await loadAll();toast('Anggota berhasil dihapus dari aplikasi');members();
+}
+async function addMember(){const name=document.getElementById('mn')?.value.trim(),phone=document.getElementById('mp')?.value.trim()||'',email=document.getElementById('me')?.value.trim(),password=document.getElementById('mw')?.value,role=document.getElementById('mr')?.value||'Anggota',bona_group_code=document.getElementById('mb')?.value||'01',relationship=document.getElementById('mrel')?.value||'Bona';if(!name||!email||!password)return toast('Nama, email dan password wajib diisi');if(password.length<8)return toast('Password minimal 8 karakter');const {data,error}=await SB.functions.invoke('add-member',{body:{name,phone,email,password,role,bona_group_code,relationship}});if(error)return toast(error.message||'Gagal menambahkan anggota');if(data?.error)return toast(data.error);await loadAll();toast('Anggota berhasil ditambahkan • ID '+(data.member_id||''));members()}
+function editMember(id){const m=state.members.find(x=>x.id===id);if(!m||state.profile?.role!=='Admin')return toast('Hanya Admin');app().innerHTML=`<h2>Edit Anggota</h2><div class="card"><div class="field"><label>Nama lengkap</label><input id="en" value="${esc(m.name)}"></div><div class="field"><label>No. HP</label><input id="ep" value="${esc(m.phone||'')}" inputmode="tel"></div><div class="field"><label>Jenis anggota</label><select id="eb" onchange="syncTypeRelation(this.value,'erel')">${[['01','Bona'],['02','Boru'],['03','Bere'],['04','Iba Bere']].map(x=>`<option value="${x[0]}" ${m.bona_group_code===x[0]?'selected':''}>${x[0]} — ${x[1]}</option>`).join('')}</select></div><input type="hidden" id="erel" value="${esc(m.relationship||'Bona')}"><div class="field"><label>Peran</label><select id="er">${['Anggota','Bendahara','Sekretaris','Ketua','Admin'].map(r=>`<option ${m.role===r?'selected':''}>${r}</option>`).join('')}</select></div><div class="field"><label>Status</label><select id="ea"><option value="true" ${m.active?'selected':''}>Aktif</option><option value="false" ${!m.active?'selected':''}>Nonaktif</option></select></div><div class="row"><button onclick="saveMember('${m.id}')">Simpan Perubahan</button><button class="btn2" onclick="go('members')">Batal</button></div></div>`}
+async function saveMember(id){
+  const name=document.getElementById('en')?.value.trim(),phone=document.getElementById('ep')?.value.trim()||'',role=document.getElementById('er')?.value,active=document.getElementById('ea')?.value==='true',bona_group_code=document.getElementById('eb')?.value,relationship=document.getElementById('erel')?.value;
+  if(!name)return toast('Nama wajib diisi');
+  const groups={'01':'Bona','02':'Boru','03':'Bere','04':'Iba Bere'};
+  const {data:old,error:oldError}=await SB.from('profiles').select('member_id,member_seq,bona_group_code').eq('id',id).maybeSingle();
+  if(oldError)return toast(oldError.message);
+  const seq=Number(old?.member_seq)||0;
+  if(seq<1)return toast('Nomor urut anggota belum tersedia. Jalankan migrasi v26 terlebih dahulu.');
+  const patch={name,phone,role,active,relationship,bona_group_code,bona_group_name:groups[bona_group_code]||relationship,member_seq:seq,member_id:bona_group_code+String(seq).padStart(2,'0')};
+  const {error}=await SB.from('profiles').update(patch).eq('id',id);
+  if(error)return toast(error.message);
+  await loadAll();toast('Data anggota diperbarui • ID '+patch.member_id);members()
+}
+
+function attendance(){
+  const rows=Array.isArray(state.schedules)?state.schedules:[];
+  if(!rows.length){
+    app().innerHTML=`<h2>Daftar Hadir</h2><div class="card"><h3>Belum ada jadwal</h3><p class="muted">Buat jadwal ibadah terlebih dahulu.</p><button onclick="go('schedule')">Buka Jadwal Ibadah</button></div>`;
+    return;
+  }
+  const opts=rows.map(s=>`<option value="${esc(s.id)}">${esc(s.title||'Ibadah')} — ${esc(s.event_date||'')}</option>`).join('');
+  if(isManager()){
+    app().innerHTML=`<h2>Daftar Hadir</h2>
+      <div class="card">
+        <label><b>Pilih jadwal ibadah</b></label>
+        <select id="as" onchange="attendanceManagerList()">${opts}</select>
+        <div class="row" style="margin-top:12px">
+          <button onclick="openQR()">📱 Tampilkan QR</button>
+          <button class="btn2" onclick="go('schedule')">📅 Lihat Jadwal</button>
+        </div>
+        <div id="qrBox"></div>
+      </div>
+      <div id="alist"></div>`;
+    attendanceManagerList();
+  }else{
+    app().innerHTML=`<h2>Daftar Hadir</h2>
+      <div class="card">
+        <label><b>Pilih jadwal ibadah</b></label>
+        <select id="as">${opts}</select>
+        <p class="muted">Untuk anggota, kehadiran dicatat dengan scan QR yang ditampilkan pengurus di lokasi ibadah.</p>
+        <button onclick="startScanner()">📷 Scan QR Kehadiran</button>
+        <div id="scannerBox"></div>
+      </div>`;
+  }
+}
+function attendanceManagerList(){
+  const e=document.getElementById('alist');if(!e)return;const sid=document.getElementById('as')?.value;const s=state.schedules.find(x=>x.id===sid);const rows=state.members.map(m=>{const a=state.attendance.find(x=>x.schedule_id===sid&&x.member_id===m.id);const st=a?.attendance_status||(a?.status?'Hadir':'Belum');return `<div class="card list"><div><b>${esc(m.name)}</b><div class="muted">${esc(m.role)} • ${esc(st)}</div></div><div class="row"><button class="btn2" onclick="setAttendance('${sid}','${m.id}','Hadir')">Hadir</button><button class="btn2" onclick="setAttendance('${sid}','${m.id}','Izin')">Izin</button><button class="btn2" onclick="setAttendance('${sid}','${m.id}','Sakit')">Sakit</button><button onclick="setAttendance('${sid}','${m.id}','Alpa')">Alpa</button></div></div>`}).join('');e.innerHTML=`<div class="card"><b>${esc(s?.title||'')}</b><p class="muted">Pengurus dapat memperbaiki status kehadiran bila diperlukan.</p></div>${rows}`
+}
+let qrCountdownInterval=null;
+function closeQRDisplay(){if(qrCountdownInterval){clearInterval(qrCountdownInterval);qrCountdownInterval=null;}const box=document.getElementById('qrBox');if(box)box.innerHTML='';}
+function updateQrCountdown(openAt,closeAt){
+  const target=document.getElementById('qrCountdown');
+  const status=document.getElementById('qrLiveStatus');
+  const help=document.getElementById('qrLiveHelp');
+  if(!target||!status||!help)return;
+  const now=new Date();let diff,headline,helpText;
+  if(now<openAt){diff=Math.max(0,openAt-now);headline='QR BELUM AKTIF';helpText='Presensi dibuka 1 jam sebelum ibadah';status.style.background='linear-gradient(90deg,#c18b18,#e8b93d)';}
+  else if(now<=closeAt){diff=Math.max(0,closeAt-now);headline='QR AKTIF';helpText='Valid sampai 2 jam setelah waktu ibadah';status.style.background='linear-gradient(90deg,#0bbf9a,#10d4ad)';}
+  else{diff=0;headline='QR KEDALUWARSA';helpText='Waktu presensi untuk jadwal ini telah berakhir';status.style.background='linear-gradient(90deg,#8a8a8a,#666)';}
+  status.querySelector('.qr-status-text').textContent=headline;help.textContent=helpText;
+  const total=Math.floor(diff/1000),h=Math.floor(total/3600),m=Math.floor((total%3600)/60),sec=total%60;
+  target.innerHTML=`<div class="qr-count-unit"><strong>${String(h).padStart(2,'0')}</strong><span>Jam</span></div><div class="qr-count-unit"><strong>${String(m).padStart(2,'0')}</strong><span>Menit</span></div><div class="qr-count-unit"><strong>${String(sec).padStart(2,'0')}</strong><span>Detik</span></div>`;
+}
+async function openQR(){
+  if(!isManager())return toast('Hanya pengurus');
+  const sid=document.getElementById('as')?.value,s=state.schedules.find(x=>x.id===sid);if(!s)return toast('Pilih jadwal');
+  const w=checkinWindow(s);if(!w)return toast('Waktu jadwal belum valid');
+  const box=document.getElementById('qrBox');if(!box)return;
+  if(qrCountdownInterval){clearInterval(qrCountdownInterval);qrCountdownInterval=null;}
+
+  // Satu QR permanen untuk satu jadwal. Token hanya dibuat sekali.
+  let {data:session,error:se}=await SB.from('attendance_sessions').select('id,token,opened_at,closes_at').eq('schedule_id',sid).maybeSingle();
+  if(se)return toast('QR belum siap: '+se.message);
+  if(!session){
+    const token=makeToken();
+    const {data:created,error}=await SB.from('attendance_sessions').insert({schedule_id:sid,token,opened_at:new Date().toISOString(),closes_at:w.close.toISOString()}).select('id,token,opened_at,closes_at').single();
+    if(error)return toast('QR belum siap: '+error.message);
+    session=created;
+  }else if(new Date(session.closes_at).getTime()!==w.close.getTime()){
+    const {data:updated,error}=await SB.from('attendance_sessions').update({closes_at:w.close.toISOString()}).eq('id',session.id).select('id,token,opened_at,closes_at').single();
+    if(error)return toast('QR belum siap: '+error.message);
+    session=updated;
+  }
+  const url=location.origin+location.pathname+'#checkin?token='+encodeURIComponent(session.token);
+  const eventDate=s.event_date?new Date(s.event_date+'T00:00:00'):null;
+  const dateLabel=eventDate&&!isNaN(eventDate)?eventDate.toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'2-digit'}):esc(s.event_date||'Tanggal belum ditentukan');
+  const timeLabel=esc(s.event_time||'Waktu belum ditentukan');
+  box.innerHTML=`<section class="qr-attendance-shell" aria-label="QR presensi kehadiran">
+    <i class="qr-ornament tl"></i><i class="qr-ornament tr"></i><i class="qr-ornament bl"></i><i class="qr-ornament br"></i>
+    <div class="qr-event-banner"><span class="qrb-icon">▦</span><div><strong>${esc(s.title||'Ibadah PSSAB')}</strong><span>${dateLabel} &nbsp; • &nbsp; ${timeLabel}</span></div></div>
+    <div class="qr-attendance-title">QR PRESENSI KEHADIRAN</div>
+    <div class="qr-white-panel"><div class="qr-code-area"><div id="qrcode"></div></div><div id="qrLiveStatus" class="qr-live-band"><span class="qr-live-icon">✓</span><span class="qr-status-text">QR AKTIF</span><small id="qrLiveHelp">Memeriksa waktu presensi…</small></div></div>
+    <div id="qrCountdown" class="qr-countdown"><div class="qr-count-unit"><strong>--</strong><span>Jam</span></div><div class="qr-count-unit"><strong>--</strong><span>Menit</span></div><div class="qr-count-unit"><strong>--</strong><span>Detik</span></div></div>
+    <div class="qr-instruction">◉ &nbsp; Scan QR di sini saat hadir ibadah</div>
+    <button class="qr-close-btn" onclick="closeQRDisplay()">Tutup QR</button>
+  </section>`;
+  if(window.QRCode)new QRCode(document.getElementById('qrcode'),{text:url,width:240,height:240,colorDark:'#101010',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
+  else document.getElementById('qrcode').innerHTML='<p style="color:#7d1017;padding:12px">QR tidak termuat. Periksa koneksi internet.</p>';
+  updateQrCountdown(w.open,w.close);qrCountdownInterval=setInterval(()=>updateQrCountdown(w.open,w.close),1000);
+}
+let qrScanner=null;
+let qrScanning=false;
+function stopScanner(){
+  if(qrScanner && qrScanning){
+    qrScanner.stop().catch(()=>{}).finally(()=>{qrScanning=false;});
+  }
+  qrScanner=null;
+  const box=document.getElementById('scannerBox');
+  if(box)box.innerHTML='';
+}
+async function startScanner(){
+  if(isManager())return toast('Scan QR digunakan oleh anggota.');
+  const box=document.getElementById('scannerBox');
+  if(!box)return;
+  stopScanner();
+  box.innerHTML=`<div class="card scanner"><h3>📷 Arahkan kamera ke QR</h3><div id="qr-reader"></div><p class="muted">Posisikan QR di dalam kotak. Kamera hanya digunakan untuk membaca QR check-in.</p><button class="btn2" onclick="stopScanner()">Tutup kamera</button></div>`;
+  if(!window.Html5Qrcode){box.innerHTML+=`<div class="card"><b>Scanner belum termuat.</b><p class="muted">Periksa koneksi internet lalu coba lagi.</p></div>`;return;}
+  qrScanner=new Html5Qrcode('qr-reader');
+  try{
+    await qrScanner.start({facingMode:'environment'},{fps:10,qrbox:{width:250,height:250}},async text=>{
+      stopScanner();
+      let target=text.trim();
+      try{
+        const u=new URL(target,location.origin);
+        if(u.hash.startsWith('#checkin?token=')){location.hash=u.hash;render();return;}
+        const token=u.searchParams.get('token');
+        if(token){location.hash='#checkin?token='+encodeURIComponent(token);render();return;}
+      }catch(e){}
+      if(target.startsWith('checkin?'))target='#'+target;
+      if(target.startsWith('#checkin?token=')){location.hash=target;render();return;}
+      app().innerHTML=`<h2>Scan QR</h2><div class="card"><h3>❌ QR bukan QR check-in PSSAB</h3><p class="muted">Silakan scan QR yang ditampilkan pengurus di tempat ibadah.</p><button onclick="go('attendance')">Kembali</button></div>`;
+    },()=>{});
+    qrScanning=true;
+  }catch(e){
+    qrScanning=false;
+    box.innerHTML=`<div class="card"><h3>❌ Kamera tidak dapat dibuka</h3><p>${esc(e.message||'Pastikan izin kamera diberikan kepada browser.')}</p><button onclick="go('attendance')">Kembali</button></div>`;
+  }
+}
+
+async function checkinFromQR(){
+  const m=location.hash.match(/^#checkin\?token=(.+)$/);if(!m)return;
+  const token=decodeURIComponent(m[1]);
+  if(!state.user){showLogin('Silakan login dahulu, lalu scan QR kembali.');return}
+  if(isManager()){app().innerHTML=`<h2>Check-in QR</h2><div class="card"><b>Pengurus</b><p class="muted">QR check-in ditujukan untuk anggota. Pengurus dapat mengelola status melalui menu Daftar Hadir.</p><button onclick="go('attendance')">Kembali</button></div>`;return}
+  app().innerHTML=`<h2>Check-in Kehadiran</h2><div class="card"><h3>Memeriksa QR...</h3><p class="muted">Mohon tunggu.</p></div>`;
+  const {data,error}=await SB.rpc('checkin_with_token',{p_token:token});
+  if(error||!data?.ok){app().innerHTML=`<h2>Check-in Kehadiran</h2><div class="card"><h3>❌ Check-in tidak berhasil</h3><p>${esc(data?.error||error?.message||'QR tidak valid atau sudah kedaluwarsa.')}</p><button onclick="go('attendance')">Kembali</button></div>`;return}
+  await loadAll();app().innerHTML=`<h2>Check-in Kehadiran</h2><div class="card" style="text-align:center"><div style="font-size:56px">✅</div><h2>Hadir tercatat!</h2><p>${esc(data.title||'Ibadah')}</p><p class="muted">${new Date().toLocaleString('id-ID')}</p><button onclick="go('attendance')">Kembali ke Daftar Hadir</button></div>`;
+}
+async function setAttendance(sid,mid,st){if(!isManager())return toast('Hanya pengurus');const payload={schedule_id:sid,member_id:mid,status:st==='Hadir',attendance_status:st};const {error}=await SB.from('attendance').upsert(payload,{onConflict:'schedule_id,member_id'});if(error)return toast(error.message);await loadAll();attendanceManagerList();toast('Status '+st+' disimpan')}
+function chat(){app().innerHTML=`<h2>Chat Kumpulan</h2><div id="msgs">${state.messages.map(m=>`<div class="chat ${m.sender_id===state.user.id?'me':''}"><b>${esc(m.profiles?.name||'Anggota')}</b><div>${esc(m.text)}</div><small>${new Date(m.created_at).toLocaleString('id-ID')}</small></div>`).join('')}</div><div class="card"><textarea id="ct" placeholder="Tulis pesan..."></textarea><button onclick="send()">Kirim</button></div>`}
+async function send(){const t=document.getElementById('ct')?.value.trim();if(!t)return;const {error}=await SB.from('messages').insert({sender_id:state.user.id,text:t});if(error)return toast(error.message);document.getElementById('ct').value='';await loadAll();chat()}
+function docs(){app().innerHTML=`<h2>Dokumentasi</h2><div class="card"><input id="photoFile" type="file" accept="image/*" onchange="uploadPhoto(this.files[0])"><div class="field"><input id="caption" placeholder="Keterangan foto"></div><p class="muted">Foto disimpan online di Supabase Storage.</p></div>${state.docs.map(d=>`<div class="card"><img class="photo" src="${esc(d.image_url)}"><b>${esc(d.caption||'Dokumentasi')}</b><p class="muted">${esc(d.profiles?.name||'Anggota')} • ${new Date(d.created_at).toLocaleString('id-ID')}</p></div>`).join('')}`}
+async function uploadPhoto(file){if(!file)return;const ext=(file.name.split('.').pop()||'jpg').toLowerCase();const path=state.user.id+'/'+Date.now()+'.'+ext;const {error:ue}=await SB.storage.from('documentation').upload(path,file,{upsert:false,contentType:file.type});if(ue)return toast(ue.message);const {data}=SB.storage.from('documentation').getPublicUrl(path);const caption=document.getElementById('caption')?.value||'';const {error:de}=await SB.from('documentation').insert({uploader_id:state.user.id,image_url:data.publicUrl,caption});if(de)return toast(de.message);await loadAll();docs();toast('Foto berhasil diunggah')}
+async function delSchedule(id){if(!confirm('Hapus jadwal ini?'))return;const {error}=await SB.from('schedules').delete().eq('id',id);if(error)return toast(error.message);await loadAll();renderSchedulePage();}
+function admin(){if(!isManager())return go('home');app().innerHTML=`<h2>Panel Pengurus</h2><div class="card"><h3>Tambah Jadwal Ibadah</h3><div class="field"><input id="st" placeholder="Judul ibadah"></div><div class="field"><input id="sd" type="date"></div><div class="field"><input id="sm" type="time"></div><div class="field"><input id="sl" placeholder="Lokasi lengkap"></div><button onclick="addS()">Simpan Jadwal</button></div><div class="card"><h3>Tambah Anggota</h3><p class="muted">Sekarang penambahan anggota dilakukan langsung dari menu <b>Anggota</b>. Admin dapat memilih peran pengurus; anggota biasa hanya dapat menambahkan anggota dengan peran Anggota.</p><button onclick="go('members')">Buka Daftar Anggota</button></div>`}
+async function addS(){const title=document.getElementById('st').value.trim(),date=document.getElementById('sd').value,time=document.getElementById('sm').value,loc=document.getElementById('sl').value.trim();if(!title||!date||!loc)return toast('Lengkapi judul, tanggal dan lokasi');const {error}=await SB.from('schedules').insert({title,event_date:date,event_time:time||'',location:loc});if(error)return toast(error.message);await loadAll();toast('Jadwal tersimpan');go('schedule')}
+function profile(){
+  const m=state.profile||{};
+  const avatar=m.profile_photo_url
+    ? `<img src="${esc(m.profile_photo_url)}" alt="Foto profil">`
+    : `<span>${esc((m.name||'?').trim().charAt(0).toUpperCase())}</span>`;
+  app().innerHTML=`<section class="profile-modern">
+    <div class="profile-modern-hero">
+      <div class="profile-modern-top"><button class="profile-back" onclick="go('home')" aria-label="Kembali">‹</button><strong>Profil</strong><button class="profile-settings" onclick="openProfileAbout()" aria-label="Tentang aplikasi">⚙</button></div>
+    </div>
+    <div class="profile-modern-content">
+      <div class="profile-person">
+        <button class="profile-photo-button" onclick="document.getElementById('profilePhoto').click()" aria-label="Ubah foto profil">${avatar}<span class="profile-camera">📷</span></button>
+        <div class="profile-person-name">${esc(m.name||'Anggota PSSAB')}</div>
+        <div class="profile-person-meta">ID: ${esc(m.member_id||'Belum dibuat')} <span>·</span> ${esc(m.relationship||'-')}</div>
+        <div class="profile-person-meta">Status: ${esc(m.role||'Anggota')}</div>
+      </div>
+      <input id="profilePhoto" class="profile-photo-input" type="file" accept="image/*" onchange="uploadProfilePhoto(this.files[0])">
+      <div class="profile-menu">
+        <button class="profile-menu-row" onclick="openProfileInfo()"><span class="profile-menu-icon">♙</span><span>Informasi Pribadi</span><span class="profile-chevron">›</span></button>
+        <button class="profile-menu-row" onclick="document.getElementById('profilePhoto').click()"><span class="profile-menu-icon">▣</span><span>Ubah Foto Profil</span><span class="profile-chevron">›</span></button>
+        <button class="profile-menu-row" onclick="changeProfilePassword()"><span class="profile-menu-icon">♙</span><span>Ganti Password</span><span class="profile-chevron">›</span></button>
+        <button class="profile-menu-row" onclick="requestProfileNotifications()"><span class="profile-menu-icon">♟</span><span>Notifikasi</span><span class="profile-chevron">›</span></button>
+        <button class="profile-menu-row" onclick="openProfileAbout()"><span class="profile-menu-icon">ⓘ</span><span>Tentang Aplikasi</span><span class="profile-chevron">›</span></button>
+        <button class="profile-menu-row profile-logout-row" onclick="logout()"><span class="profile-menu-icon">⇥</span><span>Keluar</span><span class="profile-chevron">›</span></button>
+      </div>
+    </div>
+  </section>`;
+}
+function openProfileInfo(){
+  const m=state.profile||{};
+  const prior=document.getElementById('profileInfoModal');if(prior)prior.remove();
+  document.body.insertAdjacentHTML('beforeend',`<div class="profile-modal" id="profileInfoModal" onclick="if(event.target===this)this.remove()"><div class="profile-modal-card"><button class="profile-modal-close" onclick="document.getElementById('profileInfoModal').remove()">×</button><h3>Informasi Pribadi</h3><div class="profile-info-row"><span>Nama</span><strong>${esc(m.name||'-')}</strong></div><div class="profile-info-row"><span>ID Anggota</span><strong>${esc(m.member_id||'-')}</strong></div><div class="profile-info-row"><span>Kategori</span><strong>${esc(m.relationship||'-')}</strong></div><div class="profile-info-row"><span>Status</span><strong>${esc(m.role||'Anggota')}</strong></div><div class="profile-info-row"><span>Email</span><strong>${esc(state.user?.email||'-')}</strong></div><button class="profile-modal-primary" onclick="document.getElementById('profileInfoModal').remove();go('profile?member=${encodeURIComponent(m.id||'')}')">Lihat ID Card</button></div></div>`);
+}
+async function changeProfilePassword(){
+  const password=prompt('Masukkan password baru (minimal 6 karakter):');
+  if(password===null)return;
+  if(password.length<6)return toast('Password minimal 6 karakter');
+  const confirmPassword=prompt('Ulangi password baru:');
+  if(confirmPassword===null)return;
+  if(password!==confirmPassword)return toast('Password tidak sama');
+  const {error}=await SB.auth.updateUser({password});
+  if(error)return toast(error.message);
+  toast('Password berhasil diperbarui');
+}
+async function requestProfileNotifications(){
+  if(!('Notification' in window))return toast('Browser ini tidak mendukung notifikasi web');
+  if(Notification.permission==='granted')return toast('Izin notifikasi sudah aktif');
+  if(Notification.permission==='denied')return toast('Notifikasi diblokir di pengaturan browser');
+  const result=await Notification.requestPermission();
+  toast(result==='granted'?'Izin notifikasi berhasil diaktifkan':'Izin notifikasi belum diaktifkan');
+}
+function openProfileAbout(){
+  const prior=document.getElementById('profileAboutModal');if(prior)prior.remove();
+  document.body.insertAdjacentHTML('beforeend',`<div class="profile-modal pssab-about-overlay" id="profileAboutModal" onclick="if(event.target===this)this.remove()"><div class="profile-modal-card pssab-about-card"><button class="profile-modal-close pssab-about-close" onclick="document.getElementById('profileAboutModal').remove()" aria-label="Tutup">×</button><h3>TENTANG APLIKASI</h3><div class="profile-about-mark pssab-about-mark"><img src="pssab-logo.png" alt="Logo PSSAB"></div><strong class="profile-about-title pssab-about-title">PSSAB TANJUNG UNCANG</strong><p class="pssab-about-description">HORAS JALA GABE PUNGUAN SITUMORANG SIPITU AMA BORU BERE IBEBERE, SEKTOR TANJUNG UNCANG BATAM</p><p class="profile-about-version pssab-about-version">PSSAB- NEWV30</p><button class="profile-modal-primary pssab-about-button" onclick="document.getElementById('profileAboutModal').remove()">Tutup</button></div></div>`);
+}
+async function uploadProfilePhoto(file){if(!file)return;const ext=(file.name.split('.').pop()||'jpg').toLowerCase();const path=state.user.id+'/'+Date.now()+'.'+ext;const {error}=await SB.storage.from('profiles').upload(path,file,{upsert:false,contentType:file.type});if(error)return toast(error.message);const {data}=SB.storage.from('profiles').getPublicUrl(path);const {error:ue}=await SB.rpc('update_my_profile',{p_profile_photo_url:data.publicUrl});if(ue)return toast(ue.message);state.profile.profile_photo_url=data.publicUrl;const i=state.members.findIndex(x=>x.id===state.user.id);if(i>=0)state.members[i].profile_photo_url=data.publicUrl;toast('Foto profil berhasil disimpan');profile()}
+function printIdCard(){document.body.classList.add('print-idcard');setTimeout(()=>window.print(),80);setTimeout(()=>document.body.classList.remove('print-idcard'),1000)}
+async function shareIdCard(){const m=state.members.find(x=>x.id===state.currentCardMemberId);if(!m)return;const url=location.origin+location.pathname+'#profile?member='+encodeURIComponent(m.id);const text=`Kartu Anggota PSSAB Tanjung Uncang\n${m.name||''}\nID: ${m.member_id||'-'}\nKategori: ${m.relationship||'-'}`;try{if(navigator.share){await navigator.share({title:'Kartu Anggota PSSAB',text,url})}else if(navigator.clipboard){await navigator.clipboard.writeText(url);toast('Link ID Card disalin')}else{prompt('Salin link ID Card:',url)}}catch(e){if(e?.name!=='AbortError')toast('Bagikan dibatalkan') }}
+function memberProfile(id){
+  const m=state.members.find(x=>x.id===id);
+  if(!m){app().innerHTML='<div class="card">Anggota tidak ditemukan.<br><button onclick="go(\'members\')">Kembali</button></div>';return;}
+  state.currentCardMemberId=id;
+  const url=location.origin+location.pathname+'#profile?member='+encodeURIComponent(m.id);
+  const role=m.role||'Anggota';
+  const rel=m.relationship||'-';
+  const photo=m.profile_photo_url
+    ? `<img class="idphoto" src="${esc(m.profile_photo_url)}" alt="Foto ${esc(m.name||'anggota')}">`
+    : `<div class="idphoto" style="display:grid;place-items:center;color:#8e1017;font-size:42px;font-weight:900">${esc((m.name||'?')[0])}</div>`;
+  app().innerHTML=`<div class="id-page-head"><button onclick="go('${id===state.user.id?'profile':'members'}')">‹ KEMBALI</button><h2>KARTU ANGGOTA</h2></div>
+  <div class="idcard" id="idCardPrint">
+    <div class="idtop"><img class="idlogo" src="pssab-logo.png" alt="Logo PSSAB"><div class="idbrand"><strong>PSSAB</strong><span>HORAS JALA GABE PUNGUAN<br>SITUMORANG SIPITU AMA<br>DOHOT BORUNA<br>SEKTOR TANJUNG UNCANG</span></div></div>
+    <div class="id-ribbon">KARTU ANGGOTA</div>
+    <div class="idmember"><div class="idphoto-wrap">${photo}</div><div class="idinfo"><div class="idname">${esc(m.name||'Anggota')}</div><div class="idfield"><span class="label">ID</span><span class="value">${esc(m.member_id||'-')}</span></div><div class="idfield"><span class="label">Status</span><span class="value">${esc(role)}</span></div><div class="idfield"><span class="label">Kategori</span><span class="value">${esc(rel)}</span></div></div></div>
+    <div class="id-lower"><div class="id-watermark">ᛟ PSSAB</div><div class="idqrbox"><div class="idqr"><div id="memberQr"></div></div><div class="idqrhelp">Berlaku selama menjadi anggota PSSAB</div></div></div>
+    <div class="idfooter"><strong>PSSAB TANJUNG UNCANG</strong><em>Satu Hati, Satu Marga, Satu Doa</em></div>
+  </div>
+  <div class="id-actions"><button onclick="printIdCard()">⬇ Download</button><button class="outline" onclick="shareIdCard()">↗ Bagikan</button><button class="id-back" onclick="go('${id===state.user.id?'profile':'members'}')">Kembali ke ${id===state.user.id?'Profil':'Anggota'}</button></div>`;
+  if(window.QRCode){const node=document.getElementById('memberQr');node.innerHTML='';new QRCode(node,{text:url,width:104,height:104,colorDark:'#101010',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});}
+}
+
+function subscribeRealtime(){SB.channel('pssab-live-'+state.user.id).on('postgres_changes',{event:'*',schema:'public',table:'messages'},async()=>{await loadAll();if(location.hash==='#chat')chat()}).on('postgres_changes',{event:'*',schema:'public',table:'schedules'},async()=>{await loadAll();if(location.hash==='#schedule'||location.hash==='#home')render()}).on('postgres_changes',{event:'*',schema:'public',table:'attendance'},async()=>{await loadAll();if(location.hash==='#attendance')attendanceList()}).on('postgres_changes',{event:'*',schema:'public',table:'profiles'},async()=>{await loadAll();if(location.hash==='#members')members(); else if(location.hash==='#profile')profile();}).subscribe()}
+window.addEventListener('hashchange',()=>render());showLogin('Memeriksa sesi login...');boot();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{});}
+</script>
+</body>
+</html>
+
+<style id="pssab-shared-rumah-bolon-topbar-v12">
+/* PSSAB v1.2 — Rumah Bolon identity across every non-home dashboard */
+#appShell:not(.home-active) > header.pssab-topbar.pssab-brand-topbar{
+  position:relative!important; isolation:isolate!important; overflow:hidden!important;
+  display:grid!important; grid-template-columns:56px minmax(0,1fr)!important;
+  align-items:center!important; gap:12px!important; min-height:112px!important;
+  padding:14px 16px!important; border:0!important; border-bottom:2px solid #d7a62a!important;
+  border-radius:0 0 16px 16px!important;
+  background-color:#4b0a10!important;
+  background-image:linear-gradient(90deg,rgba(48,5,10,.97) 0%,rgba(72,7,13,.91) 47%,rgba(72,7,13,.35) 100%),url('rumah-bolon-pssab-v30.png')!important;
+  background-size:cover!important; background-position:center 54%!important;
+  box-shadow:0 5px 18px rgba(25,4,6,.28)!important;
+}
+#appShell:not(.home-active) > header.pssab-brand-topbar .topbar-brand{width:56px!important;height:56px!important;min-width:56px!important;z-index:1!important}
+#appShell:not(.home-active) > header.pssab-brand-topbar .topbar-logo{width:54px!important;height:54px!important;min-width:54px!important;border:2px solid #e5bd54!important;background:rgba(255,248,228,.1)!important}
+#appShell:not(.home-active) > header.pssab-brand-topbar .pssab-brand-copy{position:relative!important;z-index:1!important;min-width:0!important;padding-right:4px!important;text-shadow:0 2px 5px #210307!important}
+#appShell:not(.home-active) > header.pssab-brand-topbar .pssab-brand-title{font-size:clamp(25px,6vw,35px)!important;line-height:1.05!important;letter-spacing:1.5px!important}
+#appShell:not(.home-active) > header.pssab-brand-topbar .pssab-brand-line{font-size:clamp(9px,2.4vw,12px)!important;line-height:1.3!important;color:#fff9ed!important;overflow-wrap:anywhere!important}
+#appShell:not(.home-active) > header.pssab-brand-topbar:after{content:'Dos Niroha Do Sibaen Nasaut';position:absolute;right:12px;bottom:5px;z-index:0;color:#f4d36f;font:italic 11px Georgia,serif;text-shadow:0 1px 4px #210307;opacity:.95}
+#appShell:not(.home-active) > main{padding-top:12px!important}
+#appShell:not(.home-active) > main > h2:first-child,#appShell:not(.home-active) > main > .page-head:first-child{margin-top:0!important}
+@media(max-width:380px){
+ #appShell:not(.home-active) > header.pssab-topbar.pssab-brand-topbar{grid-template-columns:44px minmax(0,1fr)!important;gap:8px!important;min-height:94px!important;padding:10px 9px 15px!important;background-position:62% center!important}
+ #appShell:not(.home-active) > header.pssab-brand-topbar .topbar-brand{width:44px!important;height:44px!important;min-width:44px!important}
+ #appShell:not(.home-active) > header.pssab-brand-topbar .topbar-logo{width:42px!important;height:42px!important;min-width:42px!important}
+ #appShell:not(.home-active) > header.pssab-brand-topbar .pssab-brand-title{font-size:25px!important}
+ #appShell:not(.home-active) > header.pssab-brand-topbar .pssab-brand-line{font-size:8.5px!important}
+ #appShell:not(.home-active) > header.pssab-brand-topbar:after{font-size:9px;bottom:3px}
+}
+</style>
