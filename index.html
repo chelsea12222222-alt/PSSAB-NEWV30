@@ -1999,8 +1999,11 @@ input,select,textarea{border-radius:13px!important}
 
 <h1 style="font-size:30px;line-height:1.1;margin:5px 0;color:#ffd875;text-shadow:1px 2px 4px #000">PSSAB</h1>
 
-<p style="font-size:13px;line-height:1.4;font-weight:800;margin:5px auto 12px;color:#fff;text-shadow:1px 2px 4px #000">
-  HORAS JALA GABE PUNGUAN SITUMORANG SIPITU AMA BORU BERE IBEBERE SEKTOR TANJUNG UNCANG
+<p style="font-size:13px;line-height:1.45;font-weight:800;letter-spacing:.25px;margin:5px auto 12px;color:#fff;text-align:center;text-shadow:1px 2px 4px #000;max-width:340px">
+  HORAS JALA GABE PUNGUAN<br>
+  SITUMORANG SIPITU AMA<br>
+  BORU BERE IBEBERE<br>
+  SEKTOR TANJUNG UNCANG BATAM
 </p>
   </div>
   <!-- KARTU LOGIN -->
@@ -2693,11 +2696,11 @@ function memberProfile(id){
     : `<div class="idphoto" style="display:grid;place-items:center;color:#8e1017;font-size:42px;font-weight:900">${esc((m.name||'?')[0])}</div>`;
   app().innerHTML=`<div class="id-page-head"><button onclick="go('${id===state.user.id?'profile':'members'}')">‹ KEMBALI</button><h2>KARTU ANGGOTA</h2></div>
   <div class="idcard" id="idCardPrint">
-    <div class="idtop"><img class="idlogo" src="pssab-logo.png" alt="Logo PSSAB"><div class="idbrand"><strong>PSSAB</strong><span>HORAS JALA GABE PUNGUAN<br>SITUMORANG SIPITU AMA<br>DOHOT BORUNA<br>SEKTOR TANJUNG UNCANG</span></div></div>
+    <div class="idtop"><img class="idlogo" src="pssab-logo.png" alt="Logo PSSAB"><div class="idbrand"><strong>PSSAB</strong><span>PSSAB SEKTOR TANJUNG UNCANG BATAM<br>PUNGUAN SITUMORANG SIPITU AMA<br>BORU BERE IBEBERE</span></div></div>
     <div class="id-ribbon">KARTU ANGGOTA</div>
     <div class="idmember"><div class="idphoto-wrap">${photo}</div><div class="idinfo"><div class="idname">${esc(m.name||'Anggota')}</div><div class="idfield"><span class="label">ID</span><span class="value">${esc(m.member_id||'-')}</span></div><div class="idfield"><span class="label">Status</span><span class="value">${esc(role)}</span></div><div class="idfield"><span class="label">Kategori</span><span class="value">${esc(rel)}</span></div></div></div>
     <div class="id-lower"><div class="id-watermark">ᛟ PSSAB</div><div class="idqrbox"><div class="idqr"><div id="memberQr"></div></div><div class="idqrhelp">Berlaku selama menjadi anggota PSSAB</div></div></div>
-    <div class="idfooter"><strong>PSSAB TANJUNG UNCANG</strong><em>Satu Hati, Satu Marga, Satu Doa</em></div>
+    <div class="idfooter"><strong>PSSAB TANJUNG UNCANG</strong></div>
   </div>
   <div class="id-actions"><button onclick="printIdCard()">⬇ Download</button><button class="outline" onclick="shareIdCard()">↗ Bagikan</button><button class="id-back" onclick="go('${id===state.user.id?'profile':'members'}')">Kembali ke ${id===state.user.id?'Profil':'Anggota'}</button></div>`;
   if(window.QRCode){const node=document.getElementById('memberQr');node.innerHTML='';new QRCode(node,{text:url,width:104,height:104,colorDark:'#101010',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});}
