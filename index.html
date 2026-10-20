@@ -20,9 +20,7 @@ body{
 min-height:100vh;
 padding:16px;
 background-color:#641016;
-background-image:
-linear-gradient(rgba(43,10,12,.58),rgba(43,10,12,.72)),
-url('rumah-bolon-pssab-v30.png');
+background-image:linear-gradient(rgba(43,10,12,.58),rgba(43,10,12,.72));
 background-position:center;
 background-size:cover;
 background-attachment:fixed;
@@ -139,7 +137,7 @@ body{padding:10px}
 #appShell header{padding:11px}
 }
 :root{--red:#8e1017;--gold:#d7a62a;--dark:#2b1710;--cream:#fff7e6;--muted:#756b64}
-*{box-sizing:border-box}body{margin:0;background:#641016 url('rumah-bolon-pssab-v30.png') center center/cover fixed no-repeat;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#251c18}
+*{box-sizing:border-box}body{margin:0;background:#641016;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#251c18}
 
 /* ===== PSSAB V30.8 MEMBER ID CARD — BATak PREMIUM ===== */
 .id-page-head{display:flex;align-items:center;gap:14px;max-width:520px;margin:0 auto 14px;padding:8px 12px;color:#fff;background:linear-gradient(110deg,#720e17,#3b1014);border-radius:14px;box-shadow:0 6px 18px #25080a35}
@@ -220,18 +218,24 @@ border-radius:11px;
 padding:10px;
 border-radius:14px;
 }
-
-/* ===== PSSAB LOGIN: BACKGROUND RUMAH BOLON ===== */
+/* BACKGROUND LOGIN PSSAB V30 */
 #loginScreen {
-  background: transparent !important;
-}
+  background-color: #35100f !important;
+  background-image:
+    linear-gradient(
+      rgba(25, 10, 15, 0.12),
+      rgba(25, 10, 15, 0.22)
+    ),
+    url("./rumah-bolon-pssab-v30.png") !important;
 
-#loginScreen > .card {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 
+  min-height: 100vh !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
 /* Kotak krem hanya pada kolom Email dan Password */
 #loginScreen .field {
   background: #fff7e6;
@@ -816,13 +820,15 @@ margin-bottom: 12px;
   margin-bottom: 14px;
 }
 
-.home-section-title h2 {
-  margin: 0;
+/* Paksa warna judul Jadwal Ibadah Terdekat */
+#appShell.home-active .home-events .home-section-title h2,
+#appShell.home-active .home-events .home-section-title h2 * {
   color: #8e1017 !important;
-  font-size: 17px;
-  line-height: 1.35;
+  -webkit-text-fill-color: #8e1017 !important;
+   text-shadow: none !important;
+  filter: none !important;
 }
-
+ 
 .home-see-all {
   width: auto;
   flex-shrink: 0;
@@ -1517,7 +1523,7 @@ margin-bottom: 12px;
 @media (max-width: 600px) {
   body {
     background-color: #5c1016 !important;
-    background-image: linear-gradient(180deg, rgba(66,7,13,.18), rgba(66,7,13,.34)), url('rumah-bolon-pssab-v30.png') !important;
+    background-image: linear-gradient(180deg, rgba(66,7,13,.18), rgba(66,7,13,.34)) !important;
     background-position: center top !important;
     background-size: cover !important;
     background-attachment: scroll !important;
@@ -1716,7 +1722,7 @@ margin-bottom: 12px;
 /* ===== PSSAB V30.5: JADWAL IBADAH MOBILE ===== */
 .schedule-page-modern{width:100%;max-width:760px;margin:0 auto;padding:8px 0 26px;color:#183655}
 .schedule-page-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 2px 14px}
-.schedule-page-heading h2{margin:0!important;color:#fff!important;font-size:21px!important;font-weight:800;letter-spacing:.1px;text-shadow:0 1px 3px #3b0005}
+.schedule-page-heading h2{margin:0!important;color:#8e1017!important;font-size:21px!important;font-weight:800;letter-spacing:.1px;text-shadow:none!important}
 .schedule-add-btn{width:38px!important;height:38px!important;min-width:38px!important;padding:0!important;border-radius:50%!important;background:#fff3df!important;color:#8e1017!important;font-size:25px!important;box-shadow:none!important}
 .schedule-monthbar{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;align-items:center;gap:8px;padding:7px 10px;margin-bottom:9px;border:1px solid #e8e1d6;border-radius:15px;background:#fffdf9;box-shadow:0 2px 8px #2408080b}
 .schedule-month-arrow{width:36px!important;height:36px!important;min-width:36px!important;padding:0!important;background:transparent!important;color:#28577a!important;font-size:27px!important;box-shadow:none!important}
@@ -1917,7 +1923,7 @@ margin-bottom: 12px;
 
 /* ===== PSSAB APP BARU — LAYER DESAIN MODERN BATak ===== */
 :root{--red:#761019;--gold:#d9ad43;--dark:#281416;--cream:#fff8eb;--muted:#766b63;--card:#fffdf8;}
-html{scroll-behavior:smooth} body{padding:10px; color:#281416; background-color:#641016; background-image:linear-gradient(135deg,rgba(35,5,10,.62),rgba(76,9,16,.70)),url('rumah-bolon-pssab-v30.png');background-position:center;background-size:cover;background-attachment:fixed}
+html{scroll-behavior:smooth} body{padding:10px; color:#281416; background-color:#641016; background-image:linear-gradient(135deg,rgba(35,5,10,.62),rgba(76,9,16,.70));background-position:center;background-size:cover;background-attachment:fixed}
 #loginScreen{padding:24px 14px 30px!important}
 #loginScreen>div:first-child{max-width:390px!important}
 #loginScreen>div:first-child img{width:128px!important;height:128px!important;filter:drop-shadow(0 8px 15px #18040788)}
@@ -1944,7 +1950,7 @@ input,select,textarea{border-radius:13px!important}
 
 /* ===== PSSAB DASHBOARD REDESIGN 1.1: clean and compact ===== */
 #appShell.home-active main{padding:0 10px 92px!important;max-width:760px;margin:0 auto}
-#appShell.home-active .home-hero{min-height:154px!important;margin:0 -10px 12px!important;padding:18px 16px 18px 96px!important;align-items:flex-end!important;background-image:linear-gradient(90deg,rgba(45,5,10,.72),rgba(45,5,10,.18)),url('rumah-bolon-pssab-v30.png')!important;background-size:cover!important;background-position:center 58%!important;border-bottom:2px solid #d7a62a!important}
+#appShell.home-active .home-hero{min-height:154px!important;margin:0 -10px 12px!important;padding:18px 16px 18px 96px!important;align-items:flex-end!important;background-image:linear-gradient(90deg,rgba(45,5,10,.72),rgba(45,5,10,.18)),url('PSSAB.BKG.png')!important;background-size:cover!important;background-position:center 58%!important;border-bottom:2px solid #d7a62a!important}
 #appShell.home-active .home-hero:before{background:linear-gradient(0deg,rgba(36,4,8,.5),transparent 85%)!important}
 #appShell.home-active .home-hero h1{font-size:34px!important;letter-spacing:1.5px!important;margin-bottom:7px!important}
 #appShell.home-active .home-hero p{max-width:440px;font-size:10px!important;line-height:1.55!important;letter-spacing:.25px;font-weight:750!important}
@@ -1970,12 +1976,13 @@ input,select,textarea{border-radius:13px!important}
  #appShell.home-active .home-feature{min-height:80px!important}
 }
 
+.maroon-page-title{color:#8e1017!important;text-shadow:none!important}
 </style>
 
 <style id="pssab-about-redesign-v13">
 /* Tentang Aplikasi: Rumah Bolon + identitas emas */
 .pssab-about-overlay{background:rgba(18,2,5,.78)!important;backdrop-filter:blur(4px)!important;padding:12px!important}
-.pssab-about-card{width:min(440px,100%)!important;max-height:90dvh!important;overflow:auto!important;position:relative!important;isolation:isolate!important;text-align:center!important;color:#fff7e6!important;border:2px solid #d7a62a!important;border-radius:22px!important;padding:24px 20px 20px!important;background:linear-gradient(180deg,rgba(50,4,9,.58),rgba(40,3,7,.94)),url('rumah-bolon-pssab-v30.png') center/cover no-repeat!important;box-shadow:0 22px 65px #0009!important}
+.pssab-about-card{width:min(440px,100%)!important;max-height:90dvh!important;overflow:auto!important;position:relative!important;isolation:isolate!important;text-align:center!important;color:#fff7e6!important;border:2px solid #d7a62a!important;border-radius:22px!important;padding:24px 20px 20px!important;background:linear-gradient(180deg,rgba(50,4,9,.88),rgba(40,3,7,.98))!important;box-shadow:0 22px 65px #0009!important}
 .pssab-about-card h3{color:#f5ce61!important;text-align:center!important;font-family:Georgia,'Times New Roman',serif!important;font-size:19px!important;letter-spacing:1.5px!important;margin:0 34px 18px!important;text-shadow:0 2px 5px #210205!important}
 .pssab-about-close{color:#ffe18a!important;background:#651019!important;border:1px solid #d7a62a!important}
 .pssab-about-mark{display:flex!important;justify-content:center!important;margin:6px auto 16px!important}
@@ -1987,6 +1994,12 @@ input,select,textarea{border-radius:13px!important}
 @media(max-width:380px){.pssab-about-card{padding:20px 14px 16px!important}.pssab-about-mark img{width:94px!important;height:94px!important}.pssab-about-description{font-size:12px!important}}
 </style>
 
+
+<style>
+/* PSSAB-NEWV30: Jadwal langsung di bawah topbar, tanpa banner kedua */
+#appShell.home-active .home-hero { display:none !important; }
+#appShell.home-active .home-events { margin-top:0 !important; }
+</style>
 </head>
 <body>
 <div id="loginScreen" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px 14px 24px;background:transparent">
@@ -2076,7 +2089,7 @@ input,select,textarea{border-radius:13px!important}
 <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 <script src="config.js"></script>
 <script>
-window.PSSAB_BUILD="PSSAB-APP-BARU-1.2-RUMAH-BOLON-ALL-DASHBOARDS";
+window.PSSAB_BUILD="PSSAB-NEWV30-HOME-BANNER-REMOVED-NO-OLD-BACKGROUND";
 const SB = window.supabase.createClient(window.PSSAB_CONFIG.SUPABASE_URL, window.PSSAB_CONFIG.SUPABASE_ANON_KEY);
 let state = { user:null, profile:null, members:[], schedules:[], messages:[], attendance:[], docs:[], loading:false, page:'home' };
 const app=()=>document.getElementById('app');
@@ -2088,7 +2101,8 @@ function go(p){
   if(location.hash.slice(1)!==target) location.hash=target;
   render(target);
 }
-function isManager(){return ['Admin','Ketua','Sekretaris'].includes(state.profile?.role)}
+function normalizedRole(){return String(state.profile?.role||'Anggota').trim().toLowerCase().replace(/[_-]+/g,' ').replace(/\s+/g,' ')}
+function isManager(){return ['admin','admin 1','admin 2','ketua','sekretaris','bendahara'].includes(normalizedRole())}
 function mapTo(s){const text=String(s||'').trim();if(!text)return toast('Lokasi belum tersedia');const q=encodeURIComponent(text);const url='https://www.google.com/maps/search/?api=1&query='+q;location.assign(url)}
 function setNav(p){document.querySelectorAll('.bottom button').forEach(x=>x.classList.remove('active'));document.getElementById('n-'+(p==='admin'?'profile':p))?.classList.add('active')}
 async function loadAll(){
@@ -2283,12 +2297,6 @@ function home(){
   }
 
 app().innerHTML = `
-  <section class="home-hero" aria-label="Identitas PSSAB">
-    <div class="home-hero-copy">
-      <h1>PSSAB</h1>
-      <p>HORAS JALA GABE PUNGUAN<br>SITUMORANG SIPITU AMA BORU BERE IBEBERE<br>SEKTOR TANJUNG UNCANG</p>
-    </div>
-  </section>
   <section class="home-events">
       <div class="home-section-title">
         <h2>▦ Jadwal Ibadah Terdekat</h2>
@@ -2396,7 +2404,7 @@ function renderSchedulePage(){
   const futureRows=monthRows.filter(s=>{const d=scheduleStart(s);return d ? d>=now : String(s.event_date||'')>=now.toISOString().slice(0,10)});
   const nextId=futureRows.length?futureRows[0].id:null;
   let html=`<section class="schedule-page-modern">
-    <div class="schedule-page-heading"><h2>Jadwal Ibadah</h2>${isManager()?'<button class="schedule-add-btn" onclick="go(\'admin\')" aria-label="Tambah jadwal">＋</button>':''}</div>
+    <div class="schedule-page-heading"><h2 class="maroon-page-title">Jadwal Ibadah</h2>${isManager()?'<button class="schedule-add-btn" onclick="go(\'admin\')" aria-label="Tambah jadwal">＋</button>':''}</div>
     <div class="schedule-monthbar">
       <button class="schedule-month-arrow" onclick="shiftScheduleMonth(-1)" aria-label="Bulan sebelumnya">‹</button>
       <label class="schedule-month-label"><span>${esc(monthLabel.charAt(0).toLocaleUpperCase('id-ID')+monthLabel.slice(1))}</span><input aria-label="Pilih bulan jadwal" type="month" value="${key}" onchange="setScheduleMonth(this.value)"></label>
@@ -2429,28 +2437,28 @@ async function refreshSchedule(){toast('Memuat jadwal...');await loadAll();rende
 function members(){
   const rows=Array.isArray(state.members)?state.members:[];
   app().innerHTML=`<section class="members-page">
-    <div class="members-heading"><div><h2>Anggota PSSAB</h2><p class="muted">Daftar anggota dan informasi keanggotaan</p></div><button class="members-add" onclick="toggleAddMember()"><span aria-hidden="true">＋</span> Tambah</button></div>
+    <div class="members-heading"><div><h2 style="color:#8e1017 !important;text-shadow:none !important;-webkit-text-fill-color:#8e1017 !important">Anggota PSSAB</h2><p class="muted" style="color:#8e1017 !important;text-shadow:none !important;-webkit-text-fill-color:#8e1017 !important">Daftar anggota dan informasi keanggotaan</p></div>${isManager()?'<button class="members-add" onclick="toggleAddMember()"><span aria-hidden="true">＋</span> Tambah</button>':''}</div>
     <div class="members-search"><span aria-hidden="true">⌕</span><input id="memberSearch" type="search" placeholder="Cari nama atau ID anggota…" aria-label="Cari anggota" oninput="filterMembers(this.value)"></div>
-    <div class="members-add-panel card"><div class="members-add-summary"><div><b>Tambah anggota baru</b><small>Masukkan data anggota yang akan didaftarkan.</small></div><button class="members-add-toggle" onclick="toggleAddMember()" aria-label="Buka form tambah anggota">＋</button></div>
+    ${isManager()?`<div class="members-add-panel card"><div class="members-add-summary"><div><b>Tambah anggota baru</b><small>Masukkan data anggota yang akan didaftarkan.</small></div><button class="members-add-toggle" onclick="toggleAddMember()" aria-label="Buka form tambah anggota">＋</button></div>
     <div id="addMemberBox" class="hide" style="margin-top:12px"><div class="field"><input id="mn" placeholder="Nama lengkap"></div><div class="field"><input id="mp" placeholder="No. HP (opsional)" inputmode="tel"></div><div class="field"><input id="me" type="email" placeholder="Email login anggota"></div><div class="field"><input id="mw" type="password" placeholder="Password awal (min. 8 karakter)"></div><div class="field"><label>Jenis anggota</label><select id="mb" onchange="syncTypeRelation(this.value,'mrel')"><option value="01">01 — Bona</option><option value="02">02 — Boru</option><option value="03">03 — Bere</option><option value="04">04 — Iba Bere</option></select></div><input type="hidden" id="mrel" value="Bona">
-    ${isManager()?'<div class="field"><label>Peran anggota</label><select id="mr"><option>Anggota</option><option>Bendahara</option><option>Sekretaris</option><option>Ketua</option><option>Admin</option></select></div>':'<input type="hidden" id="mr" value="Anggota"><p class="muted">Anggota baru dibuat dengan peran Anggota.</p>'}
-    <div class="row members-form-actions"><button onclick="addMember()">Simpan Anggota</button><button class="btn2" onclick="toggleAddMember()">Batal</button></div><p class="muted members-password-note">Password awal diberikan kepada anggota tersebut. Setelah login, anggota dapat menggunakan aplikasi seperti biasa.</p></div></div>
+    <div class="field"><label>Peran anggota</label><select id="mr"><option>Anggota</option><option>Bendahara</option><option>Sekretaris</option><option>Ketua</option><option>Admin</option></select></div>
+    <p class="muted members-password-note" style="color:#8e1017 !important;text-shadow:none !important;-webkit-text-fill-color:#8e1017 !important">Password awal diberikan kepada anggota tersebut. Setelah login, anggota dapat menggunakan aplikasi seperti biasa.</p></div></div>`:''}
     <div class="members-list-head"><b>Semua Anggota</b><span>${rows.length} anggota</span></div>
     <div id="membersList" class="members-list">${rows.length?rows.map((m,i)=>`<article class="member-row" data-search="${esc([m.name,m.member_id,m.relationship,m.role].filter(Boolean).join(' ').toLowerCase())}">
       <div class="member-row-main"><div class="member-avatar">${m.profile_photo_url?`<img src="${esc(m.profile_photo_url)}" alt="Foto ${esc(m.name||'anggota')}">`:esc((m.name||'?').trim().charAt(0).toUpperCase())}</div>
       <div class="member-row-info"><div class="member-name-line"><b>${esc(m.name||'Nama belum tersedia')}</b>${m.active===false?'<span class="member-status inactive">Nonaktif</span>':'<span class="member-status">Aktif</span>'}</div><div class="member-meta">ID <strong>${esc(m.member_id||'Belum dibuat')}</strong>${m.relationship?` <span class="member-dot">•</span> ${esc(m.relationship)}`:''}</div><div class="member-role">${esc(m.role||'Anggota')}</div></div></div>
-      <div class="member-row-actions"><button class="member-action primary" onclick="go('profile?member=${encodeURIComponent(m.id)}')">ID Card</button>${state.profile?.role==='Admin'?`<button class="member-action" onclick="editMember('${m.id}')">Edit</button><button class="member-action danger" onclick="requestDeleteMember('${m.id}')">Hapus</button>`:''}</div>
+      <div class="member-row-actions"><button class="member-action primary" onclick="go('profile?member=${encodeURIComponent(m.id)}')">ID Card</button>${['admin','admin 1','admin 2'].includes(normalizedRole())?`<button class="member-action" onclick="editMember('${m.id}')">Edit</button><button class="member-action danger" onclick="requestDeleteMember('${m.id}')">Hapus</button>`:''}</div>
     </article>`).join(''):'<div class="members-empty"><span>👥</span><b>Belum ada anggota</b><p>Anggota yang terdaftar akan muncul di sini.</p></div>'}</div>
-    ${state.profile?.role==='Admin'?'<p class="members-admin-note">Admin dapat mengubah data dan peran anggota, mengaktifkan atau menonaktifkan akun, serta menghapus anggota.</p>':''}
+    ${['admin','admin 1','admin 2'].includes(normalizedRole())?'<p class="members-admin-note">Admin dapat mengubah data dan peran anggota, mengaktifkan atau menonaktifkan akun, serta menghapus anggota.</p>':''}
     </section>`;
 }
 function filterMembers(query){
   const q=String(query||'').trim().toLowerCase();
   document.querySelectorAll('#membersList .member-row').forEach(row=>{row.style.display=(!q||(row.dataset.search||'').includes(q))?'':'none'});
 }
-function toggleAddMember(){document.getElementById('addMemberBox')?.classList.toggle('hide')}
+function toggleAddMember(){if(!isManager())return toast('Akses ditolak. Hanya pengurus yang dapat menambah anggota.');document.getElementById('addMemberBox')?.classList.toggle('hide')}
 function requestDeleteMember(id){
-  if(state.profile?.role!=='Admin')return toast('Hanya Admin');
+  if(!['admin','admin 1','admin 2'].includes(normalizedRole()))return toast('Hanya Admin yang dapat menghapus anggota');
   if(id===state.user.id)return toast('Akun Admin sendiri tidak dapat dihapus');
   const m=state.members.find(x=>x.id===id);
   if(!m)return toast('Anggota tidak ditemukan');
@@ -2467,8 +2475,8 @@ async function confirmDeleteMember(){
   if(data?.error){buttons.forEach(b=>b.disabled=false);return toast(data.error)}
   closeDeleteMember();await loadAll();toast('Anggota berhasil dihapus dari aplikasi');members();
 }
-async function addMember(){const name=document.getElementById('mn')?.value.trim(),phone=document.getElementById('mp')?.value.trim()||'',email=document.getElementById('me')?.value.trim(),password=document.getElementById('mw')?.value,role=document.getElementById('mr')?.value||'Anggota',bona_group_code=document.getElementById('mb')?.value||'01',relationship=document.getElementById('mrel')?.value||'Bona';if(!name||!email||!password)return toast('Nama, email dan password wajib diisi');if(password.length<8)return toast('Password minimal 8 karakter');const {data,error}=await SB.functions.invoke('add-member',{body:{name,phone,email,password,role,bona_group_code,relationship}});if(error)return toast(error.message||'Gagal menambahkan anggota');if(data?.error)return toast(data.error);await loadAll();toast('Anggota berhasil ditambahkan • ID '+(data.member_id||''));members()}
-function editMember(id){const m=state.members.find(x=>x.id===id);if(!m||state.profile?.role!=='Admin')return toast('Hanya Admin');app().innerHTML=`<h2>Edit Anggota</h2><div class="card"><div class="field"><label>Nama lengkap</label><input id="en" value="${esc(m.name)}"></div><div class="field"><label>No. HP</label><input id="ep" value="${esc(m.phone||'')}" inputmode="tel"></div><div class="field"><label>Jenis anggota</label><select id="eb" onchange="syncTypeRelation(this.value,'erel')">${[['01','Bona'],['02','Boru'],['03','Bere'],['04','Iba Bere']].map(x=>`<option value="${x[0]}" ${m.bona_group_code===x[0]?'selected':''}>${x[0]} — ${x[1]}</option>`).join('')}</select></div><input type="hidden" id="erel" value="${esc(m.relationship||'Bona')}"><div class="field"><label>Peran</label><select id="er">${['Anggota','Bendahara','Sekretaris','Ketua','Admin'].map(r=>`<option ${m.role===r?'selected':''}>${r}</option>`).join('')}</select></div><div class="field"><label>Status</label><select id="ea"><option value="true" ${m.active?'selected':''}>Aktif</option><option value="false" ${!m.active?'selected':''}>Nonaktif</option></select></div><div class="row"><button onclick="saveMember('${m.id}')">Simpan Perubahan</button><button class="btn2" onclick="go('members')">Batal</button></div></div>`}
+async function addMember(){if(!isManager())return toast('Akses ditolak. Hanya Admin, Ketua, Sekretaris, dan Bendahara yang dapat menambah anggota.');const name=document.getElementById('mn')?.value.trim(),phone=document.getElementById('mp')?.value.trim()||'',email=document.getElementById('me')?.value.trim(),password=document.getElementById('mw')?.value,role=document.getElementById('mr')?.value||'Anggota',bona_group_code=document.getElementById('mb')?.value||'01',relationship=document.getElementById('mrel')?.value||'Bona';if(!name||!email||!password)return toast('Nama, email dan password wajib diisi');if(password.length<8)return toast('Password minimal 8 karakter');const {data,error}=await SB.functions.invoke('add-member',{body:{name,phone,email,password,role,bona_group_code,relationship}});if(error)return toast(error.message||'Gagal menambahkan anggota');if(data?.error)return toast(data.error);await loadAll();toast('Anggota berhasil ditambahkan • ID '+(data.member_id||''));members()}
+function editMember(id){const m=state.members.find(x=>x.id===id);if(!m||!['admin','admin 1','admin 2'].includes(normalizedRole()))return toast('Hanya Admin yang dapat mengedit anggota');app().innerHTML=`<h2>Edit Anggota</h2><div class="card"><div class="field"><label>Nama lengkap</label><input id="en" value="${esc(m.name)}"></div><div class="field"><label>No. HP</label><input id="ep" value="${esc(m.phone||'')}" inputmode="tel"></div><div class="field"><label>Jenis anggota</label><select id="eb" onchange="syncTypeRelation(this.value,'erel')">${[['01','Bona'],['02','Boru'],['03','Bere'],['04','Iba Bere']].map(x=>`<option value="${x[0]}" ${m.bona_group_code===x[0]?'selected':''}>${x[0]} — ${x[1]}</option>`).join('')}</select></div><input type="hidden" id="erel" value="${esc(m.relationship||'Bona')}"><div class="field"><label>Peran</label><select id="er">${['Anggota','Bendahara','Sekretaris','Ketua','Admin'].map(r=>`<option ${m.role===r?'selected':''}>${r}</option>`).join('')}</select></div><div class="field"><label>Status</label><select id="ea"><option value="true" ${m.active?'selected':''}>Aktif</option><option value="false" ${!m.active?'selected':''}>Nonaktif</option></select></div><div class="row"><button onclick="saveMember('${m.id}')">Simpan Perubahan</button><button class="btn2" onclick="go('members')">Batal</button></div></div>`}
 async function saveMember(id){
   const name=document.getElementById('en')?.value.trim(),phone=document.getElementById('ep')?.value.trim()||'',role=document.getElementById('er')?.value,active=document.getElementById('ea')?.value==='true',bona_group_code=document.getElementById('eb')?.value,relationship=document.getElementById('erel')?.value;
   if(!name)return toast('Nama wajib diisi');
@@ -2619,12 +2627,12 @@ async function checkinFromQR(){
   await loadAll();app().innerHTML=`<h2>Check-in Kehadiran</h2><div class="card" style="text-align:center"><div style="font-size:56px">✅</div><h2>Hadir tercatat!</h2><p>${esc(data.title||'Ibadah')}</p><p class="muted">${new Date().toLocaleString('id-ID')}</p><button onclick="go('attendance')">Kembali ke Daftar Hadir</button></div>`;
 }
 async function setAttendance(sid,mid,st){if(!isManager())return toast('Hanya pengurus');const payload={schedule_id:sid,member_id:mid,status:st==='Hadir',attendance_status:st};const {error}=await SB.from('attendance').upsert(payload,{onConflict:'schedule_id,member_id'});if(error)return toast(error.message);await loadAll();attendanceManagerList();toast('Status '+st+' disimpan')}
-function chat(){app().innerHTML=`<h2>Chat Kumpulan</h2><div id="msgs">${state.messages.map(m=>`<div class="chat ${m.sender_id===state.user.id?'me':''}"><b>${esc(m.profiles?.name||'Anggota')}</b><div>${esc(m.text)}</div><small>${new Date(m.created_at).toLocaleString('id-ID')}</small></div>`).join('')}</div><div class="card"><textarea id="ct" placeholder="Tulis pesan..."></textarea><button onclick="send()">Kirim</button></div>`}
+function chat(){app().innerHTML=`<h2 class="maroon-page-title">Chat Kumpulan</h2><div id="msgs">${state.messages.map(m=>`<div class="chat ${m.sender_id===state.user.id?'me':''}"><b>${esc(m.profiles?.name||'Anggota')}</b><div>${esc(m.text)}</div><small>${new Date(m.created_at).toLocaleString('id-ID')}</small></div>`).join('')}</div><div class="card"><textarea id="ct" placeholder="Tulis pesan..."></textarea><button onclick="send()">Kirim</button></div>`}
 async function send(){const t=document.getElementById('ct')?.value.trim();if(!t)return;const {error}=await SB.from('messages').insert({sender_id:state.user.id,text:t});if(error)return toast(error.message);document.getElementById('ct').value='';await loadAll();chat()}
-function docs(){app().innerHTML=`<h2>Dokumentasi</h2><div class="card"><input id="photoFile" type="file" accept="image/*" onchange="uploadPhoto(this.files[0])"><div class="field"><input id="caption" placeholder="Keterangan foto"></div><p class="muted">Foto disimpan online di Supabase Storage.</p></div>${state.docs.map(d=>`<div class="card"><img class="photo" src="${esc(d.image_url)}"><b>${esc(d.caption||'Dokumentasi')}</b><p class="muted">${esc(d.profiles?.name||'Anggota')} • ${new Date(d.created_at).toLocaleString('id-ID')}</p></div>`).join('')}`}
+function docs(){app().innerHTML=`<h2 style="color:#8e1017!important">Dokumentasi</h2><div class="card"><input id="photoFile" type="file" accept="image/*" onchange="uploadPhoto(this.files[0])"><div class="field"><input id="caption" placeholder="Keterangan foto"></div><p class="muted" style="color:#8e1017!important">Foto disimpan online di Supabase Storage.</p></div>${state.docs.map(d=>`<div class="card"><img class="photo" src="${esc(d.image_url)}"><b>${esc(d.caption||'Dokumentasi')}</b><p class="muted">${esc(d.profiles?.name||'Anggota')} • ${new Date(d.created_at).toLocaleString('id-ID')}</p></div>`).join('')}`}
 async function uploadPhoto(file){if(!file)return;const ext=(file.name.split('.').pop()||'jpg').toLowerCase();const path=state.user.id+'/'+Date.now()+'.'+ext;const {error:ue}=await SB.storage.from('documentation').upload(path,file,{upsert:false,contentType:file.type});if(ue)return toast(ue.message);const {data}=SB.storage.from('documentation').getPublicUrl(path);const caption=document.getElementById('caption')?.value||'';const {error:de}=await SB.from('documentation').insert({uploader_id:state.user.id,image_url:data.publicUrl,caption});if(de)return toast(de.message);await loadAll();docs();toast('Foto berhasil diunggah')}
 async function delSchedule(id){if(!confirm('Hapus jadwal ini?'))return;const {error}=await SB.from('schedules').delete().eq('id',id);if(error)return toast(error.message);await loadAll();renderSchedulePage();}
-function admin(){if(!isManager())return go('home');app().innerHTML=`<h2>Panel Pengurus</h2><div class="card"><h3>Tambah Jadwal Ibadah</h3><div class="field"><input id="st" placeholder="Judul ibadah"></div><div class="field"><input id="sd" type="date"></div><div class="field"><input id="sm" type="time"></div><div class="field"><input id="sl" placeholder="Lokasi lengkap"></div><button onclick="addS()">Simpan Jadwal</button></div><div class="card"><h3>Tambah Anggota</h3><p class="muted">Sekarang penambahan anggota dilakukan langsung dari menu <b>Anggota</b>. Admin dapat memilih peran pengurus; anggota biasa hanya dapat menambahkan anggota dengan peran Anggota.</p><button onclick="go('members')">Buka Daftar Anggota</button></div>`}
+function admin(){if(!isManager())return go('home');app().innerHTML=`<h2 style="color:#8e1017!important">Panel Pengurus</h2><div class="card"><h3>Tambah Jadwal Ibadah</h3><div class="field"><input id="st" placeholder="Judul ibadah"></div><div class="field"><input id="sd" type="date"></div><div class="field"><input id="sm" type="time"></div><div class="field"><input id="sl" placeholder="Lokasi lengkap"></div><button onclick="addS()">Simpan Jadwal</button></div><div class="card"><h3>Tambah Anggota</h3><p class="muted" style="color:#8e1017!important">Sekarang penambahan anggota dilakukan langsung dari menu <b>Anggota</b>. Admin dapat memilih peran pengurus; anggota biasa hanya dapat menambahkan anggota dengan peran Anggota.</p><button onclick="go('members')">Buka Daftar Anggota</button></div>`}
 async function addS(){const title=document.getElementById('st').value.trim(),date=document.getElementById('sd').value,time=document.getElementById('sm').value,loc=document.getElementById('sl').value.trim();if(!title||!date||!loc)return toast('Lengkapi judul, tanggal dan lokasi');const {error}=await SB.from('schedules').insert({title,event_date:date,event_time:time||'',location:loc});if(error)return toast(error.message);await loadAll();toast('Jadwal tersimpan');go('schedule')}
 function profile(){
   const m=state.profile||{};
@@ -2722,7 +2730,7 @@ if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js',{updat
   padding:14px 16px!important; border:0!important; border-bottom:2px solid #d7a62a!important;
   border-radius:0 0 16px 16px!important;
   background-color:#4b0a10!important;
-  background-image:linear-gradient(90deg,rgba(48,5,10,.97) 0%,rgba(72,7,13,.91) 47%,rgba(72,7,13,.35) 100%),url('rumah-bolon-pssab-v30.png')!important;
+  background-image:linear-gradient(90deg,rgba(48,5,10,.68) 0%,rgba(72,7,13,.48) 47%,rgba(72,7,13,.18) 100%),url('PSSAB.BKG.png')!important;
   background-size:cover!important; background-position:center 54%!important;
   box-shadow:0 5px 18px rgba(25,4,6,.28)!important;
 }
@@ -2741,5 +2749,120 @@ if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js',{updat
  #appShell:not(.home-active) > header.pssab-brand-topbar .pssab-brand-title{font-size:25px!important}
  #appShell:not(.home-active) > header.pssab-brand-topbar .pssab-brand-line{font-size:8.5px!important}
  #appShell:not(.home-active) > header.pssab-brand-topbar:after{font-size:9px;bottom:3px}
+}
+ 
+/* BACKGROUND TOPBAR DASHBOARD BERANDA PSSAB */
+#dashboardScreen .topbar {
+  background-color: #641016 !important;
+  background-image:
+    linear-gradient(
+      rgba(35, 8, 10, 0.20),
+      rgba(35, 8, 10, 0.35)
+    ),
+    url("./PSSAB.BKG.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+ 
+/* ===== PSSAB V30: BACKGROUND HERO + TOPBAR ===== */
+
+/* 1. TOPBAR PALING ATAS */
+#appShell.home-active > header {
+  background-color: #641016 !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(35, 8, 10, 0.48),
+      rgba(35, 8, 10, 0.18)
+    ),
+    url("./PSSAB.BKG.png") !important;
+  background-size: cover !important;
+  background-position: center 45% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 2. HERO BERANDA */
+#appShell.home-active .home-hero {
+  background-color: #641016 !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(45, 5, 10, 0.72),
+      rgba(45, 5, 10, 0.18)
+    ),
+    url("./PSSAB.BKG.png") !important;
+  background-size: cover !important;
+  background-position: center 58% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Pertahankan lapisan gelap pada hero */
+#appShell.home-active .home-hero:before {
+  background: linear-gradient(
+    0deg,
+    rgba(36, 4, 8, 0.5),
+    transparent 85%
+  ) !important;
+}
+ 
+/* ===== PSSAB V30: BACKGROUND TENTANG APLIKASI ===== */
+.pssab-about-card {
+  background-color: #35070b !important;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(35, 3, 7, 0.22),
+      rgba(35, 3, 7, 0.55)
+    ),
+    url("./rumah-bolon-pssab-v30.png") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* ===== BACKGROUND HEADER DASHBOARD PROFIL ===== */
+.profile-modern-hero {
+  background-color: #641016 !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(35, 5, 9, 0.30),
+      rgba(35, 5, 9, 0.12)
+    ),
+    url("./PSSAB.BKG.png") !important;
+  background-size: cover !important;
+  background-position: center 58% !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Dashboard Anggota PSSAB — tulisan jelas tanpa bayangan */
+.members-page .members-heading h2,
+.members-page .members-heading p,
+.members-page .members-password-note,
+.members-page .members-admin-note {
+  color: #8e1017 !important;
+  -webkit-text-fill-color: #8e1017 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Kerapian tulisan deskripsi */
+.members-page .members-heading p,
+.members-page .members-password-note,
+.members-page .members-admin-note {
+  font-weight: 400 !important;
+  line-height: 1.6;
+}
+ 
+/* Perbaikan tulisan pada dashboard Anggota */
+#appShell .members-page .members-heading h2,
+#appShell .members-page .members-heading p,
+#appShell .members-page .members-password-note,
+#appShell .members-page .members-admin-note {
+  color: #8e1017 !important;
+  -webkit-text-fill-color: #8e1017 !important;
+  text-shadow: none !important;
+  filter: none !important;
 }
 </style>
